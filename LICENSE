@@ -1,14 +1,22 @@
-MIT License
+Copyright (c) 2025 Marcos Silveira Gonzalez Júnior for the repo and for
+the softwares and documentation files that were created by him.
 
-Copyright (c) 2025 Marcos Silveira Gonzalez Júnior
+As for the parts of code from the book SQL From Data Analysis, all credits due to,
+for the codes from the book, SQL for Data Analysis, from Cathy Tanimura (O'Reilly). 
+Copyright 2021 Cathy Tanimura, 978-1-492-08878-3.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
+to use, copy, modify, but not replicate without quotation from whom this came 
+and from where this came from. 
+Copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
+This software must not be modified to, by a first or a third party, to
+be used to invade the github account, or any of his accounts,
+ of the person who created this repo,
+otherwise the entity involved shall be held accountable and will be in debt with the
+person - i.e. Marcos Silveira Gonzalez Júnior - who created this repo. 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
