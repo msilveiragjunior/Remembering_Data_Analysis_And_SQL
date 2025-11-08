@@ -3,3 +3,5 @@ And, following her code examples, I'll try to explain concepts for my own unders
 I found that to be the best way to remember the basics and write, in a concise way, the content inside it.
 All I'm doing is synthesizing the logic of the examples and explanations of the book for personal purposes - i.e. remembering the knowledge from it and trying to be useful,
 by giving people a more concise way of understanding concepts; or at least trying. If something is wrong, please, contact me.
+We'll use sqllite3 to create and manipulate the databases inside this repo. But similarities with postgresql and other types of SQL are immense.
+So you can also use the examples, but I'll try to manipulate the databases using only python and not an external software.
