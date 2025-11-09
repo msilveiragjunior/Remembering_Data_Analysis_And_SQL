@@ -86,3 +86,12 @@ information; that said: it's a data warehouse with more strict rules.
 Data Store: It's a type of data storage system, so any database is
 a data store, but not all data stores are databases.
 """
+# --- Beginning working with real cases --- #
+"""
+Lets work with real cases.
+The SELECT statements, which are queries, is a statement that declares
+what data we are querying inside a database.
+Lets create a python file that will create a dictionary with users
+information. With that, we can create a database with sqlite3, and
+use it as an example for querying.
+"""
