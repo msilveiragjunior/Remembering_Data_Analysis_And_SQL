@@ -37,7 +37,7 @@ database or its schemas; or tables, views and, or, functions.
 DML: Data Manipulation Language. It's used on the data inside the tables,
 views, functions. The data per se.
 """
-# --- Relational and Non-Relational Databases --- #
+# --- Relational, Non-Relational Databases and Transactional Databases --- #
 """
 Relational databases refer to databases that stores data in tabular format with
 columns and rows. The columns contain attributes and the rows have the data
@@ -53,4 +53,36 @@ programming languages and other types of files containing data, like json,
 for applications that require models that are large, need optimization for
 low latency, and have less consistency restrictions comparing to Relational
 databases.
+A Transactional database, whoever, is defined as a database designed to
+be consistent. It either fails completely on its transaction or its
+completely successful. So when a transaction fails, it maintain consistency,
+which is a necessity for it to be transactional. The consistency lets it
+rollback the data, without mismatched records. So most of relational
+databases are transactional.
+A transactional database comes with a set of principles, for it to be
+considered safe:
+Atomicity: The transaction either succeeds or don't
+Consistency: Data is strictly defined by a set of rules
+Isolation: No transaction will interfere with another transaction
+Durability: No data is lost, even with system crashes or other
+set of errors occur.
+With this in mind, A relational database can be transactional,
+adhering to the principles of the transactional database or be more flexible.
+Relational and non-relational databases relate to how one stores data;
+transactional databases relate to how one deal with the operation of the data.
+Some Non-relational databases can also be strict enough do adhere to the ACID
+principle.
+"""
+# --- Data Warehouses, Data Lakes, Data Store and Data Mart --- #
+"""
+Data warehouse: It's a repository where multiple sources combine to store
+data, making it a central point of storage. It is optimal to be used with
+complex data queries and analysis. It has pre-defined schemas.
+Data Lakes: It's a central repository of data where schemas are not
+pre-defined. They support raw, structured, semi-structured, and unstructured
+data.
+Data Marts: It's a type of data warehouse, focused on a specific type of
+information; that said: it's a data warehouse with more strict rules.
+Data Store: It's a type of data storage system, so any database is
+a data store, but not all data stores are databases.
 """
