@@ -103,3 +103,14 @@ Inside the table_01_sql we've created two functions so far:
 one for creating a table inside a database, with a defined schema.
 Another for inserting values to it.
 """
+"""
+Inside each function we can find strings defined, and meant to be sent
+to the sqllite3 library - this library is written in C.
+It works by compiling the SQL text statements into bytecode.
+A statement consists of keywords, commands and names that are meant
+to be executed by the sqllite3 library.
+When we created a database, first we called the command
+CREATE TABLE, followed by the name of the table.
+In between parenthesis, we the code of our statement -
+e.g. what we'll select. Re
+"""
