@@ -1,3 +1,5 @@
+# This is the file for the sql functions.
+
 def create_table(table_name, index, username, email):
     create_user_table = 'CREATE TABLE {} (' \
                          '{} INTEGER PRIMARY KEY,' \

@@ -41,8 +41,11 @@ insert_user = table_01_sql.insert_user(keys_dict[0], keys_dict[2],
                                        keys_dict[3],
                                        table_01[keys_dict[2]],
                                        table_01[keys_dict[3]])
-print(insert_user)
+# Here we are executing the command insert inside the variable insert_user
 cursor.execute(insert_user)
+# The commit method is used to end the transaction making changes in the
+# database permanent
 connection.commit()
-
+# Here we use the close() method from the class cursor to close any connection
+# available to the database
 cursor.close()

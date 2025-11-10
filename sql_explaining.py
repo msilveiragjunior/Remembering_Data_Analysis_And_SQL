@@ -56,7 +56,7 @@ databases.
 A Transactional database, whoever, is defined as a database designed to
 be consistent. It either fails completely on its transaction or its
 completely successful. So when a transaction fails, it maintain consistency,
-which is a necessity for it to be transactional. The consistency lets it
+which is a necessity for it to be transactional. The consistency Let's it
 rollback the data, without mismatched records. So most of relational
 databases are transactional.
 A transactional database comes with a set of principles, for it to be
@@ -88,10 +88,18 @@ a data store, but not all data stores are databases.
 """
 # --- Beginning working with real cases --- #
 """
-Lets work with real cases.
+Let's work with real cases.
 The SELECT statements, which are queries, is a statement that declares
 what data we are querying inside a database.
-Lets create a python file that will create a dictionary with users
+Let's create a python file that will create a dictionary with users
 information. With that, we can create a database with sqlite3, and
 use it as an example for querying.
+"""
+"""
+We've created two files. One where we execute the code from the
+table_01_sql - i.e. the file where the functions for the SQL file
+is stored - and the table_01_sql.
+Inside the table_01_sql we've created two functions so far:
+one for creating a table inside a database, with a defined schema.
+Another for inserting values to it.
 """
