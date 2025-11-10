@@ -112,5 +112,8 @@ to be executed by the sqllite3 library.
 When we created a database, first we called the command
 CREATE TABLE, followed by the name of the table.
 In between parenthesis, we the code of our statement -
-e.g. what we'll select. Re
+e.g. what we'll select. The fields inside it will define the data tables.
+We can use logical data; numerical data; datetime data and much more.
+The fields can be defined as a TEXT field, or an INTEGER field.
+I'll try to cover lots of them in this repo.
 """
