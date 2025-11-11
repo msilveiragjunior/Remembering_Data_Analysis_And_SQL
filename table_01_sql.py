@@ -47,3 +47,13 @@ def select_distinct_function(table, column, flag=True):
         select_distinct = "SELECT COUNT(DISTINCT {}) FROM {};".format(column,
                                                                       table)
         return select_distinct
+
+
+# Here we'll define the select with where clause function
+def select_where_function(table, column, condition):
+    # Here we define the command SELECT with the wildcard symbol *
+    # to select all queries from a table
+    select_distinct = "SELECT * " \
+                      "FROM {} " \
+                      "WHERE {}{};".format(table, column, condition)
+    return select_distinct

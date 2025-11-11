@@ -178,3 +178,18 @@ the name of the municipalities - True for COUNT and False
 for only the name.
 We'll use a default parameter as True to always return the name.
 """
+# --- The WHERE clause --- #
+"""
+The where clause is used only to return a specified from a given column.
+For example:
+SELECT * FROM column
+FROM table
+WHERE condition
+We can also use operators with the WHERE clause, like:
+=; >; <; >=; <=; != or <>; BETWEEN - e.g. WHERE BETWEEN 10 AND 60 -;
+LIKE - e.g WHERE condition LIKE 'q%';-; IN - e.g. IN
+('Avenue')
+PS: When writing text, SQL requires that you use text
+in between single quotes.
+Let's do a function in python that will use the WHERE clause.
+"""

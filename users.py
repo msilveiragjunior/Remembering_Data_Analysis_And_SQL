@@ -98,7 +98,23 @@ def select_distinct_function():
         print(str(*i) + "\n")
 
 
-select_distinct_function()
+# Here we'll test the WHERE clause with SELECT with some examples
+def select_with_where():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name: \n")
+    condition = input("Enter the operator symbol with the condition: \n")
+    where_municipality = table_01_sql.select_where_function(key, column_01,
+                                                            condition)
+    print(where_municipality)
+    cursor.execute(where_municipality)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(*i)
+
+
+select_with_where()
+# select_distinct_function()
 # select_user_function()
 # The commit method is used to end the transaction making changes in the
 # database permanent
