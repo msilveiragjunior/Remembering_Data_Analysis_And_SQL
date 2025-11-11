@@ -122,22 +122,22 @@ def select_orderby_function():
                       " 'desc' for descending order: \n")
     flag = False
     flag_is = input("Do you want to insert the condition? \n"
-                    "Type no for False and yes for True")
+                    "Type no for False and yes for True: \n")
     if flag_is.lower() == 'yes':
         flag = True
     else:
         flag = False
-    distinct_municipality = table_01_sql.select_distinct_function(key,
-                                                                  column_01,
-                                                                  condition,
-                                                                  flag)
+    distinct_municipality = table_01_sql.select_orderby_function(key,
+                                                                 column_01,
+                                                                 condition,
+                                                                 flag)
     cursor.execute(distinct_municipality)
     rows = cursor.fetchall()
     for i in rows:
         print(*i)
 
 
-select_orderby_function()
+# select_orderby_function()
 # select_with_where()
 # select_distinct_function()
 # select_user_function()
