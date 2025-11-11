@@ -120,7 +120,13 @@ def select_orderby_function():
     # Let's place a flag to order by asc or desc
     condition = input("Enter 'asc' for ascending order or"
                       " 'desc' for descending order: \n")
-    flag = True
+    flag = False
+    flag_is = input("Do you want to insert the condition? \n"
+                    "Type no for False and yes for True")
+    if flag_is.lower() == 'yes':
+        flag = True
+    else:
+        flag = False
     distinct_municipality = table_01_sql.select_distinct_function(key,
                                                                   column_01,
                                                                   condition,

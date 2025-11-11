@@ -60,10 +60,17 @@ def select_where_function(table, column, condition):
 
 
 # Here we'll use the keyword ORDER BY to define our function:
-def select_orderby_function(table, column, condition):
+def select_orderby_function(table, column, condition, flag):
     # Here we'll define the command using the syntax given
     # on the sql_explaining file.
-    select_order_by = "SELECT {}" \
-                      "FROM {} " \
-                      "ORDER BY {} {}".format(column, table, column, condition)
-    return select_order_by
+    if flag:
+        select_order_by = "SELECT {}" \
+                        "FROM {} " \
+                        "ORDER BY {} {}".format(column, table, column,
+                                                condition)
+        return select_order_by
+    else:
+        select_order_by = "SELECT {}" \
+                        "FROM {} " \
+                        "ORDER BY {}".format(column, table, column)
+        return select_order_by
