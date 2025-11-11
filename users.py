@@ -54,9 +54,28 @@ def insert_user_function():
     cursor.execute(insert_user)
 
 
+# Here we we'll call the function for the SELECT method.
+# We'll select the column usernames, select them and, then,
+# print every single one of them. The return of this execute()
+# method will be a tuple of all information available.
+def select_user_function():
+    key = input("Insira o nome da tabela da qual você quer a informação: \n")
+    column_01 = input("Insira o nome da coluna: \n")
+    # Now we can send the information to create the statement
+    # necessary with a function, inside the file table_01_sql
+    select_user = table_01_sql.select_username(column_01, key)
+    cursor.execute(select_user)
+    # With the fetchall() method we can retrieve all the information
+    # within the database.
+    rows = cursor.fetchall()
+    for i in rows:
+        print(i)
+
+
 # The commit method is used to end the transaction making changes in the
 # database permanent
 connection.commit()
-# Here we use the close() method from the class cursor to close any connection
-# available to the database
+# Here we use the close(), and the connection method from the class cursor to
+# close any connection available to the database.
 cursor.close()
+connection.close()

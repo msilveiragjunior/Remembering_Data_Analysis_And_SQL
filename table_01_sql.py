@@ -21,3 +21,10 @@ def insert_user(table_name, username, email, value_username, value_email):
                                     value_username,
                                     value_email)
     return insert_user_table
+
+
+# Here we'll select the column from the table and return the string
+# formatted.
+def select_username(column, table):
+    insert_user_table = "SELECT {} from {};".format(column, table)
+    return insert_user_table

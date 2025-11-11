@@ -145,3 +145,10 @@ There are many other commands, and we'll learn them on the basics as we go on.
 We'll try to put every important example inside a function that,
 when we need, call the SQL function, to be written.
 """
+# --- Using the command SELECT --- #
+"""
+Now that we know a little bit more of how SQL works,
+let's create a function that will send information related to the
+column that we want to retrieve information.
+We also need to close the database connection with the .close() method.
+"""
