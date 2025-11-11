@@ -23,26 +23,37 @@ numbers_of_keys = input("Please, specify the number of keys inside each "
 table_01 = {
     }
 
-for i in range(0, int(numbers_of_keys)):
-    key = input("Insira o nome da chave: \n")
-    table_01[key] = input("Insira um valor para a chave: \n")
-# Here we add the values to their keys
-keys_dict = list(table_01.keys())
 
-# create_table = table_01_sql.create_table(keys_dict[0], keys_dict[1],
-# #keys_dict[2], keys_dict[3])
-# print(create_table)
-# cursor.execute(create_table)
+# Here we call the create table function
+def create_table_function():
+    for i in range(0, int(numbers_of_keys)):
+        key = input("Insira o nome da chave: \n")
+        table_01[key] = input("Insira um valor para a chave: \n")
+    # Here we add the values to their keys
+    keys_dict = list(table_01.keys())
+    create_table = table_01_sql.create_table(keys_dict[0], keys_dict[1],
+                                             keys_dict[2], keys_dict[3])
+    print(create_table)
+    cursor.execute(create_table)
 
 
-# number_of_users = input("Insert the number of users: \n")
+# Here we call the insert function.
+def insert_user_function():
+    for i in range(0, int(numbers_of_keys)):
+        key = input("Insira o nome da chave: \n")
+        table_01[key] = input("Insira um valor para a chave: \n")
+    # Here we add the values to their keys
+    keys_dict = list(table_01.keys())
+    # number_of_users = input("Insert the number of users: \n")
 
-insert_user = table_01_sql.insert_user(keys_dict[0], keys_dict[2],
-                                       keys_dict[3],
-                                       table_01[keys_dict[2]],
-                                       table_01[keys_dict[3]])
-# Here we are executing the command insert inside the variable insert_user
-cursor.execute(insert_user)
+    insert_user = table_01_sql.insert_user(keys_dict[0], keys_dict[2],
+                                           keys_dict[3],
+                                           table_01[keys_dict[2]],
+                                           table_01[keys_dict[3]])
+    # Here we are executing the command insert inside the variable insert_user
+    cursor.execute(insert_user)
+
+
 # The commit method is used to end the transaction making changes in the
 # database permanent
 connection.commit()
