@@ -34,5 +34,11 @@ def insert_user(table_name, username, email, value_username, value_email):
 # Here we'll select the column from the table and return the string
 # formatted.
 def select_username(column, table):
-    insert_user_table = "SELECT {} from {};".format(column, table)
-    return insert_user_table
+    select_username_table = "SELECT {} FROM {};".format(column, table)
+    return select_username_table
+
+
+# Here we'll define the select distinct function
+def select_distinct_function(table, column):
+    select_distinct = "SELECT DISTINCT {} FROM {};".format(column, table)
+    return select_distinct
