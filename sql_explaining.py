@@ -167,5 +167,14 @@ show the code sample.
 The structure of the statement looks like this:
 SELECT DISTINCT column
 FROM table;
-Remember, the semicolon in the end of the statement serves as a separator
+Remember, the semicolon in the end of the statement serves as a separator.
+We can also use the DISTINCT keyword inside the COUNT function.
+For example: SELECT COUNT(DISTINCT column)
+FROM table;
+This will return the number of different municipalities
+So let's refactor the function with a flag to make it
+return the COUNT of different municipalities or
+the name of the municipalities - True for COUNT and False
+for only the name.
+We'll use a default parameter as True to always return the name.
 """

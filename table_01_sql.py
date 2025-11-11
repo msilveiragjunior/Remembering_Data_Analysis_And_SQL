@@ -39,6 +39,11 @@ def select_username(column, table):
 
 
 # Here we'll define the select distinct function
-def select_distinct_function(table, column):
-    select_distinct = "SELECT DISTINCT {} FROM {};".format(column, table)
-    return select_distinct
+def select_distinct_function(table, column, flag=True):
+    if flag:
+        select_distinct = "SELECT DISTINCT {} FROM {};".format(column, table)
+        return select_distinct
+    else:
+        select_distinct = "SELECT COUNT(DISTINCT {}) FROM {};".format(column,
+                                                                      table)
+        return select_distinct

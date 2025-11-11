@@ -84,7 +84,15 @@ def select_distinct_function():
     distinct_municipality = table_01_sql.select_distinct_function(key,
                                                                   column_01)
     cursor.execute(distinct_municipality)
-    print(distinct_municipality)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(str(*i) + "\n")
+
+    # Here we show the count for SELECT DISTINCT municipalities
+    distinct_municipality = table_01_sql.select_distinct_function(key,
+                                                                  column_01,
+                                                                  False)
+    cursor.execute(distinct_municipality)
     rows = cursor.fetchall()
     for i in rows:
         print(str(*i) + "\n")
