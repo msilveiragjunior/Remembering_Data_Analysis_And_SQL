@@ -152,3 +152,20 @@ let's create a function that will send information related to the
 column that we want to retrieve information.
 We also need to close the database connection with the .close() method.
 """
+# --- The command SELECT DISTINCT --- #
+# Here we'll use a db from dataquest.io - all credits
+# due to them. https://www.dataquest.io/blog/sql-basics/
+# The database is an example database with fake information.
+# So I'm not responsible for any given information inside given database.
+# We'll only use it as an example, giving credits to them.
+"""
+We can use the SELECT DISTINCT, being DISTINCT another command, to
+select only values that we don't want to repeat.
+In this example, we'll show all municipalities inside the hubway.db,
+from dataquest.io - all credits to them for the fake database -, to
+show the code sample.
+The structure of the statement looks like this:
+SELECT DISTINCT column
+FROM table;
+Remember, the semicolon in the end of the statement serves as a separator
+"""

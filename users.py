@@ -68,10 +68,13 @@ def select_user_function():
     # With the fetchall() method we can retrieve all the information
     # within the database.
     rows = cursor.fetchall()
+    # With this for loop we can print each information from
+    # the tuple retrieved.
     for i in rows:
         print(i)
 
 
+select_user_function()
 # The commit method is used to end the transaction making changes in the
 # database permanent
 connection.commit()

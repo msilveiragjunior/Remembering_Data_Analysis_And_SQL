@@ -12,6 +12,14 @@ def create_table(table_name, index, username, email):
 # With DB Browser to see the users inserted
 
 
+# The INSERT INTO command tells the database to insert into a table,
+# then we tell the name of the columns, in between parenthesis, and
+# the VALUES, also in between parenthesis and with a comma, separating
+# all values, that will be inserted in those columns.
+# As our table auto-increments its PRIMARY KEY, we don't need to
+# create an increment to the id, that act as an integer and index.
+# As it auto-increments itself, the SQL database will send an statement
+# to increment a value before the insertion of the new row.
 def insert_user(table_name, username, email, value_username, value_email):
     insert_user_table = "INSERT INTO {} (" \
                         "{}, " \
