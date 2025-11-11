@@ -203,7 +203,7 @@ FROM table,
 ORDER BY column ASC (ascending) / DESC (descending);
 So let's make a function for to show how it works.
 """
-# --- AND and OR operators --- #
+# --- AND, OR and NOT operators --- #
 """
 Operators are used with clauses to be used as conditions.
 The AND operator is used to join multiple conditions and return
@@ -222,4 +222,19 @@ If we use the first in our table, it will return no results
 from the query.
 If we use the latter, we will return all tuples with data
 from the Boston and Cambridge municipalities.
+The NOT operator is used with other operators
+with clauses to negate the condition given
+For example:
+SELECT *
+FROM stations
+WHERE NOT municipality = 'Boston'
+In this example, we select all rows where the municipality
+is not Boston. We use the NOT operator with the equal operator.
+SELECT *
+FROM stations
+WHERE municipality NOT IN ('Boston', 'Cambridge')
+Here we use the NOT operator with the IN operator, that
+we'll take a look later.
+In this, we'll query and return all the rows
+that are not in boston or cambridge
 """
