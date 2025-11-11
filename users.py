@@ -137,6 +137,29 @@ def select_orderby_function():
         print(*i)
 
 
+# With this function we'll test if a query returns empty or not,
+# and we'll see how many fields are empty
+def check_null_or_not_null():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name: \n")
+    condition = input("Enter IS NULL or IS NOT NULL: \n")
+    null_not_null = table_01_sql.check_null_or_not_null(key, column_01,
+                                                        condition.upper())
+    print(null_not_null)
+    cursor.execute(null_not_null)
+    rows = cursor.fetchall()
+    if condition == 'IS NOT NULL':
+        print("These are the returns for {} IS NOT NULL\n".format(column_01))
+        for row in rows:
+            print(*row)
+    elif condition == 'IS NULL':
+        print("These are the returns for {} IS NULL\n".format(column_01))
+        for row in rows:
+            print(*row)
+
+
+check_null_or_not_null()
 # select_orderby_function()
 # select_with_where()
 # select_distinct_function()

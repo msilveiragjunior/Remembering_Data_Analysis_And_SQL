@@ -238,3 +238,34 @@ we'll take a look later.
 In this, we'll query and return all the rows
 that are not in boston or cambridge
 """
+# --- Null Values --- #
+"""
+A null value is a field without a value.
+A NULL value field differs from a zero value field. For Example:
+You can count a 0 value field, it contains nothing, but it's a value.
+A NULL value field is a field without a field: the absence of value.
+The syntax of creating a field with NULL values is the following:
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+username TEXT,
+emaiL TEXT NULL) <----- This is defined as an optional field
+To create a table with a field that is mandatory, we add the NOT
+NULL constraint.
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+username TEXT NOT NULL, <------- This field is NOT optional
+emaiL TEXT NULL)
+Testing if a value is NULL or NOT NULL cannot be done with comparison
+operators.
+We have to use the IS NULL or IS NOT NULL operators.
+The syntax is as follows:
+SELECT column
+FROM table
+WHERE column IS NULL
+This will return all values with empty fields.
+PS:
+There's much debate on either NULL is a value or a marker.
+Let's leave this debate for another time.
+We'll create a function, this time, to see how many fields are null
+and how many are not.
+"""

@@ -74,3 +74,11 @@ def select_orderby_function(table, column, condition, flag):
                         "FROM {} " \
                         "ORDER BY {}".format(column, table, column)
         return select_order_by
+
+
+# Here we'll define the function to check if NULL or NOT NULL:
+def check_null_or_not_null(table, column, condition):
+    check_null = "SELECT * " \
+                 "FROM {} " \
+                 "WHERE {} {};".format(table, column, condition)
+    return check_null
