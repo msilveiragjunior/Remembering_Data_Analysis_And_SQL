@@ -287,3 +287,19 @@ PS:
 If there's no WHERE clause in the query, all the names
 from municipality, from the example, will be updated to NeW York.
 """
+# --- DELETE statement --- #
+"""
+The Delete statement is also very simple.
+It deletes a record in a table given a condition.
+If there's no condition, then all the records
+from the table will be deleted.
+The syntax is as follows:
+DELETE FROM table
+WHERE Condition
+For example:
+DELETE FROM stations
+WHERE municipality = 'Boston'
+This code deletes all rows with Boston in it.
+We can make is more strict, to delete only one row,
+by defining a more specific characteristic from the field.
+"""
