@@ -308,3 +308,41 @@ DROP TABLE stations
 This will delete the table stations completely. Not only
 remove its fields, but delete the table itself.
 """
+# --- SELECT TOP clause --- #
+"""
+The SELECT TOP clause is also another simple clause.
+It's used to specify the number of records to query
+from the statement.
+The syntax vary, but we'll use the SQL Server syntax for the
+purpose of giving an example:
+SELECT column,
+FROM table,
+WHERE condition,
+LIMIT number;
+For example, if we want to limit the number the
+5 first records of the query, we'll write the statement
+like this:
+SELECT *
+FROM stations
+WHERE municipality = 'Cambridge'
+LIMIT 5;
+This would return the first 5 rows with the municipality of Cambridge
+Without the WHERE clause, this would return the first 5 rows of
+the table.
+If you want to sort the result, we can also add a ORDER BY keyword
+to the statement
+It would look like this:
+SELECT *
+FROM stations
+WHERE municipality = 'Cambridge'
+ORDER BY station ASC
+LIMIT 5;
+This would order in ascending order.
+Or if you want to order it alphabetically:
+SELECT *
+FROM stations
+WHERE municipality = 'Cambridge'
+ORDER BY station
+LIMIT 5;
+"""
+# --- Aggregate Functions --- #
