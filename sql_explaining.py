@@ -269,3 +269,21 @@ Let's leave this debate for another time.
 We'll create a function, this time, to see how many fields are null
 and how many are not.
 """
+# --- UPDATE statement --- #
+"""
+The UPDATE statement is very simple and need no examples in code.
+This statement is used to update a column with a new value, or columns
+with new values.
+The syntax is as follows:
+UPDATE table
+SET column_01 = value_01, column_02 = value_02, column_03 = value_03
+WHERE condition
+For example:
+UPDATE stations
+SET municipality = 'New York'
+WHERE municipality = 'Boston'
+This will update all the fields where Boston is written to New York.
+PS:
+If there's no WHERE clause in the query, all the names
+from municipality, from the example, will be updated to NeW York.
+"""
