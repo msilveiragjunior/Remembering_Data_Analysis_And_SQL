@@ -193,3 +193,13 @@ PS: When writing text, SQL requires that you use text
 in between single quotes.
 Let's do a function in python that will use the WHERE clause.
 """
+# --- ORDER BY keyword --- #
+"""
+The ORDER BY keyword can be used to order an query to sort
+the returned query; it can also be in ascending or descending order.
+The syntax is as follows:
+SELECT column,
+FROM table,
+ORDER BY column ASC (ascending) / DESC (descending);
+So let's make a function for to show how it works.
+"""

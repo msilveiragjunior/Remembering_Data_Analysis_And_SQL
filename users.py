@@ -106,14 +106,33 @@ def select_with_where():
     condition = input("Enter the operator symbol with the condition: \n")
     where_municipality = table_01_sql.select_where_function(key, column_01,
                                                             condition)
-    print(where_municipality)
     cursor.execute(where_municipality)
     rows = cursor.fetchall()
     for i in rows:
         print(*i)
 
 
-select_with_where()
+# Here we'll test the SELECT FROM ORDER BY keyword statement
+def select_orderby_function():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name:\n")
+    # Let's place a flag to order by asc or desc
+    condition = input("Enter 'asc' for ascending order or"
+                      " 'desc' for descending order: \n")
+    flag = True
+    distinct_municipality = table_01_sql.select_distinct_function(key,
+                                                                  column_01,
+                                                                  condition,
+                                                                  flag)
+    cursor.execute(distinct_municipality)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(*i)
+
+
+select_orderby_function()
+# select_with_where()
 # select_distinct_function()
 # select_user_function()
 # The commit method is used to end the transaction making changes in the
