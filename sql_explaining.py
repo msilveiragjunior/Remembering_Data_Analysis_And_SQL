@@ -302,4 +302,9 @@ WHERE municipality = 'Boston'
 This code deletes all rows with Boston in it.
 We can make is more strict, to delete only one row,
 by defining a more specific characteristic from the field.
+To delete a table, we can use the DROP TABLE statement
+For example:
+DROP TABLE stations
+This will delete the table stations completely. Not only
+remove its fields, but delete the table itself.
 """
