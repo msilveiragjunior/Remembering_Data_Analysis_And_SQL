@@ -140,3 +140,8 @@ DELETE - Deletes data
 INSERT INTO - Inserts new data
 There are many other commands, and we'll learn them on the basics as we go on.
 """
+# --- Refactoring the users file --- #
+"""Let's refactor the users.py file to make it more readable.
+We'll try to put every important example inside a function that,
+when we need, call the SQL function, to be written.
+"""
