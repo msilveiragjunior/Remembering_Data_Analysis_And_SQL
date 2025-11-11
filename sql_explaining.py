@@ -410,5 +410,30 @@ This would return the number 600. Give or take.
 """
 # --- AVG() --- #
 """
-
+This function returns the average value of all the numbers
+in a numeric column.
+The syntax is as follows:
+SELECT AVG(column)
+FROM table
+WHERE condition;
+So if we were applying it to the lat column, as before,
+it would appear like this:
+SELECT avg(lat)
+FROM stations
+WHERE lat > 40
+And the return would be something like 42.3...
+We can also take out the WHERE clause and
+just take the average of all latitudes:
+SELECT avg(lat)
+FROM stations
+We can also use a sub-query to query an expression:
+SELECT *
+FROM stations
+WHERE lat > (
+SELECT avg(lat)
+FROM stations);
+(This example is from the w3schools.com site, so credits due
+to them for the logic of the example.)
+This will return all the lats that are
+higher than the average of all lats.
 """
