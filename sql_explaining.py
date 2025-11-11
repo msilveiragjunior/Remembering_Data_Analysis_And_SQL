@@ -116,4 +116,27 @@ e.g. what we'll select. The fields inside it will define the data tables.
 We can use logical data; numerical data; datetime data and much more.
 The fields can be defined as a TEXT field, or an INTEGER field.
 I'll try to cover lots of them in this repo.
+A field is contained inside a table. Inside the users table, there
+are 3 fields:
+id: an INTEGER field that is also a PRIMARY KEY. The PRIMARY
+KEY, in SQL is a column, or sets of columns, that are unique and
+meant to be unique.
+A RECORD is another name for row, being each entry that exists in a table.
+All records are positioned on the horizontal axis of a table.
+A column is defined by the first information on the vertical
+axis. It describes the information put on a field below it.
+"""
+# --- Important SQL Commands --- #
+"""
+Here we can see important SQL commands:
+CREATE TABLE - Crates a table
+ALTER TABLE - Alters a table
+DROP TABLE - Deletes a table
+CREATE INDEX - Creates an index
+DROP INDEX - Deletes an index
+UPDATE - Updates data
+SELECT - Extracts data
+DELETE - Deletes data
+INSERT INTO - Inserts new data
+There are many other commands, and we'll learn them on the basics as we go on.
 """
