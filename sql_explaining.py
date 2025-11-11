@@ -367,3 +367,48 @@ FROM stations
 GROUP BY municipality
 It would return the min value for each municipality
 """
+# --- COUNT() --- #
+"""
+The count() function gives us the result of a query
+from a table.
+The syntax is as follows:
+SELECT COUNT(column)
+FROM table
+WHERE condition;
+For example:
+SELECT COUNT(municipality)
+FROM stations
+This would query the number 142 and return it.
+This is the number of entries inside the database.
+We can also add a WHERE clause:
+SELECT COUNT(municipality)
+FROM stations
+WHERE municipality = 'Cambridge'
+This would return the number of entries
+where cambridge is written.
+We can use all the other clauses and from the examples above.
+"""
+# --- SUM() --- #
+"""
+To return the sum of a numeric column we we'll use the
+sum() function.
+The Syntax of the function is as follows:
+SELECT sum(column)
+FROM table
+WHERE condition;
+So if we were to sum the lat of a station, we would do:
+SELECT sum(lat)
+FROM stations
+WHERE lat > 40
+This would not be useful, but would return the sum of all
+latitudes above 40 inside the table stations.
+We can also use expressions inside the sum function:
+SELECT sum(lat / 10)
+FROM stations
+WHERE lat > 40
+This would return the number 600. Give or take.
+"""
+# --- AVG() --- #
+"""
+
+"""
