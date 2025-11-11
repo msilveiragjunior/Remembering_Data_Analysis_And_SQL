@@ -10,8 +10,9 @@ import sqlite3
 # to the db. If the file does not exist, it creates a new one.
 # Or you can use the DB Browser to create it, if you don't want to
 # create the database here.
-connection = sqlite3.connect('users.db')
-
+# We'll only use this db with the first 3 examples
+# connection = sqlite3.connect('users.db')
+connection = sqlite3.connect('hubway.db')
 # We have to create an object called cursor that will allow us
 # to execute SQL commands.
 cursor = connection.cursor()
@@ -27,8 +28,8 @@ table_01 = {
 # Here we call the create table function
 def create_table_function():
     for i in range(0, int(numbers_of_keys)):
-        key = input("Insira o nome da chave: \n")
-        table_01[key] = input("Insira um valor para a chave: \n")
+        key = input("Insert the name of the key \n")
+        table_01[key] = input("Insert a value for the key \n")
     # Here we add the values to their keys
     keys_dict = list(table_01.keys())
     create_table = table_01_sql.create_table(keys_dict[0], keys_dict[1],
@@ -40,8 +41,8 @@ def create_table_function():
 # Here we call the insert function.
 def insert_user_function():
     for i in range(0, int(numbers_of_keys)):
-        key = input("Insira o nome da chave: \n")
-        table_01[key] = input("Insira um valor para a chave: \n")
+        key = input("Insert the name of the key \n")
+        table_01[key] = input("Insert a value for the key \n")
     # Here we add the values to their keys
     keys_dict = list(table_01.keys())
     # number_of_users = input("Insert the number of users: \n")
@@ -59,8 +60,9 @@ def insert_user_function():
 # print every single one of them. The return of this execute()
 # method will be a tuple of all information available.
 def select_user_function():
-    key = input("Insira o nome da tabela da qual você quer a informação: \n")
-    column_01 = input("Insira o nome da coluna: \n")
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name:\n")
     # Now we can send the information to create the statement
     # necessary with a function, inside the file table_01_sql
     select_user = table_01_sql.select_username(column_01, key)
@@ -74,7 +76,22 @@ def select_user_function():
         print(i)
 
 
-select_user_function()
+# Here we'll test the SELECT DISTINCT statement
+def select_distinct_function():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name:\n")
+    distinct_municipality = table_01_sql.select_distinct_function(key,
+                                                                  column_01)
+    cursor.execute(distinct_municipality)
+    print(distinct_municipality)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(str(*i) + "\n")
+
+
+select_distinct_function()
+# select_user_function()
 # The commit method is used to end the transaction making changes in the
 # database permanent
 connection.commit()
