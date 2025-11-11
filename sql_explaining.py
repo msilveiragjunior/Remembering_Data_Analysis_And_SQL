@@ -203,3 +203,23 @@ FROM table,
 ORDER BY column ASC (ascending) / DESC (descending);
 So let's make a function for to show how it works.
 """
+# --- AND and OR operators --- #
+"""
+Operators are used with clauses to be used as conditions.
+The AND operator is used to join multiple conditions and return
+a result if both are true.
+Example:
+SELECT *
+FROM stations
+WHERE municipality = 'Boston' and municipality = 'Cambridge'
+The OR operator is used to join multiple conditions and return
+a result if one of the conditions is true.
+Example:
+SELECT *
+FROM stations
+WHERE municipality = 'Boston' or municipality = 'Cambridge'
+If we use the first in our table, it will return no results
+from the query.
+If we use the latter, we will return all tuples with data
+from the Boston and Cambridge municipalities.
+"""
