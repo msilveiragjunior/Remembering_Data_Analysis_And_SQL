@@ -346,3 +346,24 @@ ORDER BY station
 LIMIT 5;
 """
 # --- Aggregate Functions --- #
+# --- Min and Max --- #
+"""
+The min() function queries all the smallest values from
+a column and returns it.
+The max() function does the opposite.
+The syntax is as follows:
+SELECT min(column)
+FROM table
+WHERE condition;
+So if we were to use it with a TEXT, it would return
+the first one in alphabetical order.
+If we were to use it a INTEGER column, it would
+return the smallest number.
+We can also use GROUP BY with these functions,
+We could group them by another column.
+For example
+SELECT min(lat), municipality
+FROM stations
+GROUP BY municipality
+It would return the min value for each municipality
+"""
