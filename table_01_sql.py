@@ -2,11 +2,10 @@
 
 def create_table(table_name, index, username, email):
     create_user_table = 'CREATE TABLE {} (' \
-                         '{} INTEGER PRIMARY KEY,' \
+                         '{} INTEGER PRIMARY KEY AUTOINCREMENT,' \
                          '{} TEXT,' \
                          '{} TEXT,' \
-                         'PRIMARY KEY ({} AUTOINCREMENT)' \
-                        ')'.format(table_name, index, username, email, index)
+                        ')'.format(table_name, index, username, email)
     return create_user_table
 # Here we'll insert users into the table. We can consult the results
 # With DB Browser to see the users inserted
