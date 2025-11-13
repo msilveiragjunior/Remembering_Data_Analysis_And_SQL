@@ -473,3 +473,57 @@ look for a sentence that contains the word something, in this case.
 We can combine wildcards or go without then. It's your choice.
 So let's code the function to see the query.
 """
+# --- Wildcards --- #
+"""
+Wildcards are used with the LIKE operator to substitute
+characters in a string.
+While the LIKE operator precedes these wildcards; the LIKE
+operator, itself, is used with the WHERE clause to query
+patterns or collections of patterns in a column.
+The Wildcard characters are used with in between apostrophes,
+for example
+Where column LIKE 'a%' <---- this tells the database to query all
+fields beginning with the letter a - this is not case sensitive
+when dealing with sqllite.
+Here we can give examples of what are the wildcard characters available
+%: This represents a sequence of characters - zero or more. If the character
+comes before the percentage symbol, then the sql query will check for
+fields beginning with a certain character - UTF-8 usually.
+When the character, or sequence of characters comes after the symbol,
+then it will check the last character of a field - or the sequence of
+characters.
+When we use a letter in between two percentage symbols, it checks
+for the letter anywhere on the string.
+_ : The underscore character, itself, represents any single character.
+For example:
+'L_nd_n' <--- can be represented by any given character listed in a field;
+that is, one that matches the pattern. London would be a matching pattern,
+or Landen. And so on. Due to our use of vowels and consonants, usually it'll
+be filled is a vowel. At least with this pattern. We can also use two
+underscores, to match a pattern with two unknown characters.
+[] : The brackets represents any single character inside the brackets.
+With that, I mean that any character, even when not separated by commas,
+will be taken into account when defining the pattern.
+For example:
+Where table LIKE '[abc]%' joins the % wildcard with the [] wildcard,
+making it query for any field beginning with either a,b or c letter.
+While '%[abc]' will query for any field ending with these characters.
+We can use the wildcard hyphen '-' symbol to give a spectrum of letters as
+a pattern, for example:
+'[a-d]%' will query all the fields beginning with the letters a, b, c and d.
+This is really useful when dealing with patterns that are continuous. At
+least with the characters.
+We can combine wildcards as we seen fit.
+^: The carat operator does not work with SQLite, the one that we are using.
+So instead of using the LIKE, we should use the GLOB operator. With the glob
+operator, we should use the symbol ! for negation.
+For example:
+GLOB '[!a]*' Would check if the first character is NOT a,
+then would check any other characters after that and accept it.
+So, when using SQLite, we need to remember this:"
+brackets and carats do not work. We need GLOB expressions or
+REGEX, for complex expressions for it to work. We need to use then
+instead of the LIKE operator.
+And, as a PS:
+if no wildcard is defined. The exact match of a string will be queried.
+"""
