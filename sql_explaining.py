@@ -554,3 +554,32 @@ way to show how IN works with sub-queries.
 Let's dive it in a pythonic way making a function to show it
 working.
 """
+# --- BETWEEN Operator --- #
+"""
+When working with ranges we cannot forget about the BETWEEN
+operator. It works by querying the values between a range
+that is defined by the programmer. It can be used with numbers,
+text and or dates.
+The syntax is simple:
+SELECT column
+FROM table
+WHERE column BETWEEN value_01 AND value_02;
+If we were to give an real life example:
+SELECT lat
+FROM stations
+WHERE lat BETWEEN 42.3 and 42.7;
+We can also use it text:
+SELECT municipality
+FROM stations
+WHERE municipality BETWEEN 'Boston' and 'Denver';
+This will return all values between Boston and Denver
+Or with dates:
+SELECT municipality
+FROM stations
+WHERE municipality BETWEEN '2005-07-01' and '2007-07-01';
+This will return all values between July 01 of 2005 and
+July 01 of 2007
+PS: BETWEEN is inclusive for both endpoints. So it will show
+everything from Boston and Denver with both included, in this
+example, in particular. The others will follow the same logic.
+"""
