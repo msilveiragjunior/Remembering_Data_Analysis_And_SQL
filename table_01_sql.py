@@ -81,3 +81,11 @@ def check_null_or_not_null(table, column, condition):
                  "FROM {} " \
                  "WHERE {} {};".format(table, column, condition)
     return check_null
+
+
+# Here we'll structure the function to use the LIKE operator:
+def like_operator(table, column, condition):
+    like_op = "SELECT * " \
+              "FROM {} " \
+              "WHERE {} LIKE {};".format(table, column, condition)
+    return like_op

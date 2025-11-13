@@ -53,7 +53,7 @@ programming languages and other types of files containing data, like json,
 for applications that require models that are large, need optimization for
 low latency, and have less consistency restrictions comparing to Relational
 databases.
-A Transactional database, whoever, is defined as a database designed to
+A Transactional database, however, is defined as a database designed to
 be consistent. It either fails completely on its transaction or its
 completely successful. So when a transaction fails, it maintain consistency,
 which is a necessity for it to be transactional. The consistency Let's it
@@ -438,3 +438,38 @@ This will return all the lats that are
 higher than the average of all lats.
 """
 # --- Like Operator --- #
+"""
+With the LIKE operator we'll implement functions to try
+to explain it better. It's a deceptive operator.
+Just a out of place PS:
+We are implementing non parameterized examples, but this
+opens doors to cyber security problems. It's better to write
+something like a fixed sentence than to send parameters to a function
+that can accept any type of format.
+Non-parameterized sentences open doors to sql injections.
+So while I'm giving examples on how to do it, I also
+know that it's not the best practice. However, the purpose
+of this repo is to remember and remind me of central aspects
+of the language and the junction of SQL and Python. All while, after
+the basics, doing analysis.
+So let's continue:
+The LIKE operator works in conjunction with the WHERE clause. It's
+used to query a specific pattern inside a column.
+We often use wildcards with the LIKE operator.
+Here I'm following the order of the w3schools - so rights for the
+order of the structure of knowledge to them. So we'll analyze wildcards,
+in depth, later.
+The syntax for the LIKE operator looks simple:
+SELECT column
+FROM table
+WHERE column LIKE condition;
+So if we were to apply it to a real case, it would look like this:
+SELECT *
+FROM stations
+WHERE municipality LIKE 'c%' - remember, SQLITE is not case sensitive.
+We can also use the logic operators with LIKE.
+We can build statements that uses the wildcard '%something%' to
+look for a sentence that contains the word something, in this case.
+We can combine wildcards or go without then. It's your choice.
+So let's code the function to see the query.
+"""

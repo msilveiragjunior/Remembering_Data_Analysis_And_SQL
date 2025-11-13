@@ -159,7 +159,21 @@ def check_null_or_not_null():
             print(*row)
 
 
-check_null_or_not_null()
+# Now we'll use the function to show how the LIKE operator works:
+def like_operator():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name: \n")
+    condition = input("Enter the condition in between apostrophes (''): \n")
+    like_op = table_01_sql.like_operator(key, column_01, condition)
+    cursor.execute(like_op)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(*i, "\n")
+
+
+like_operator()
+# check_null_or_not_null()
 # select_orderby_function()
 # select_with_where()
 # select_distinct_function()
