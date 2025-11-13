@@ -527,3 +527,30 @@ instead of the LIKE operator.
 And, as a PS:
 if no wildcard is defined. The exact match of a string will be queried.
 """
+# --- In Operator --- #
+"""
+The IN operator works as way to define multiple values with the WHERE
+clause, allowing you to query multiple strings.
+The syntax is simple:
+SELECT column
+FROM table
+WHERE column IN (value);
+If we were to use in a real situation, it would look like this:
+SELECT municipality
+FROM stations
+WHERE municipality IN ('Cambridge', 'Boston')
+It would return all the rows that have Cambridge
+and Boston in their municipality column.
+We can use the NOT keyword in front of the operator
+to negate all the values inside the list.
+We can also, in the real world, use a sub-query.
+For example:
+SELECT municipality
+FROM stations
+WHERE lat IN (SELECT lat FROM stations WHERE lat > 42.35)
+PS: It's simpler to write WHERE lat > 42.35,
+but for the sake of the explanation. I'm doing it in a convoluted
+way to show how IN works with sub-queries.
+Let's dive it in a pythonic way making a function to show it
+working.
+"""

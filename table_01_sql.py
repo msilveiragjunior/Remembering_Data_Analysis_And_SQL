@@ -89,3 +89,15 @@ def like_operator(table, column, condition):
               "FROM {} " \
               "WHERE {} LIKE {};".format(table, column, condition)
     return like_op
+
+
+# Now we'll structure the function for the IN operator:
+# Remember, it's not parameterized, so it's flawed with the
+# possibility of SQL injection. So parameterize your queries
+# when doing it
+def in_operator(table, column, value):
+    string = ", ".join(f"'{val}'" for val in value)
+    in_op = "SELECT * " \
+            "FROM {} " \
+            "WHERE {} IN ({});".format(table, column, string)
+    return in_op

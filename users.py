@@ -172,7 +172,26 @@ def like_operator():
         print(*i, "\n")
 
 
-like_operator()
+# Here we'll define de function that will carry the code for the IN
+# Operator:
+def in_operator():
+    values = []
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    column_01 = input("Enter the column name: \n")
+    num_of_values = input("Enter the number of values: \n")
+    for i in range(0, int(num_of_values)):
+        values.append(input("Enter the name of the value: \n"))
+    in_op = table_01_sql.in_operator(key, column_01, values)
+    print(in_op)
+    cursor.execute(in_op)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(*i, "\n")
+
+
+in_operator()
+# like_operator()
 # check_null_or_not_null()
 # select_orderby_function()
 # select_with_where()
