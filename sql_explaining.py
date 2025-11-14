@@ -710,3 +710,20 @@ and all matching rows from Column_01 that is contained
 within both tables. Non-matching rows from the left table appear
 as NULLs.
 """
+# --- FULL JOIN or FULL OUTER JOIN --- #
+"""
+The FULL JOIN keyword, when used in a statement,
+will return all rows when there a match between
+the left table (a) or the right table (b) - here
+we are using the same table names from the examples above.
+The syntax is as follows:
+SELECT a.column_01, b.column_01, a.column_02
+FROM a
+FULL JOIN (or, instead, write FULL OUTER JOIN) b
+ON a.column_01 = b.column_01
+The returns of a FULL JOIN keyword are usually large.
+PS: It can, and mostly will, return NULL fields.
+It's completely normal and explainable:
+Not every field will have a value when comparing
+both tables.
+"""
