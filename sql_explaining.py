@@ -637,3 +637,40 @@ Aliases should be used for readability when functions are in use;
 there is more than and one table in a query; when we want to combine columns,
 and for readability.
 """
+# --- JOIN clause --- #
+"""
+The JOIN clause is simple, but have depth.
+What do I mean by that?
+When you JOIN a table, you can have 4 types of junctions:
+Inner Join: Where a query returns all values that are
+contained in both tables.
+Left Join: Where a query returns all values from the left table,
+and all the values from the right table that match the records
+from the left table.
+Right Join: Where a query returns all values from the right table,
+and all the values from the left table that match the records
+from the right table.
+Full Join: Returns all values if there is a match when comparing
+records from both tables. It's like an logical OR operator
+acting on it.
+PS:
+It's easier to visualize it when you think of these concepts as venn
+diagrams.
+The syntax is simple. In this case, we'll use the LEFT JOIN:
+SELECT a.Column_01, b.Column_02
+FROM b
+LEFT JOIN a ON b.Column_01 = a.Column_01;
+The return is a query with all the values from b table,
+and all matching values from Column_01 that is contained
+within both tables.
+"""
+# --- INNER JOIN --- #
+"""
+When we talked about the JOIN clause, we saw there's more than
+one type of combination between tables.
+Now we are going to talk about the concept of INNER JOIN.
+The INNER (keyword) JOIN (clause) keyword is one where
+all values in the columns defined with SELECT will be returned if
+, in a comparison query, values that are selected to be compared coincide
+in both tables will be selected.
+"""
