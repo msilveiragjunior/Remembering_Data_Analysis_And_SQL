@@ -1,32 +1,41 @@
-Copyright (c) 2025 Marcos Silveira Gonzalez Júnior for the repo and for
-the softwares and documentation files that were created by him.
-
-As for the parts of code from the book SQL From Data Analysis, all credits due to,
-for the codes from the book, SQL for Data Analysis, from Cathy Tanimura (O'Reilly). 
-Copyright 2021 Cathy Tanimura, 978-1-492-08878-3.
-
-All credits from the fake database hubway.db due to dataquest.io
-https://www.dataquest.io/blog/sql-basics/
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, but not replicate without quotation from whom this came 
-and from where this came from. 
-Copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-This software must not be modified to, by a first or a third party, to
-be used to invade the github account, or any of his accounts,
- of the person who created this repo,
-otherwise the entity involved shall be held accountable and will be in debt with the
-person - i.e. Marcos Silveira Gonzalez Júnior - who created this repo. 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
++------------------------------------------------------------------------------+
+|                                  LICENSE                                     |
+|                                                                              |
+| Copyright (c) 2025 Marcos Silveira Gonzalez Júnior                           |
+|                                                                              |
+| This repository, including the software and documentation files created by   |
+| Marcos Silveira Gonzalez Júnior, is copyrighted by him.                      |
+|                                                                              |
+| Parts of the code from the book "SQL for Data Analysis" are credited to      |
+| Cathy Tanimura (O'Reilly, 2021, ISBN: 978-1-492-08878-3).                    |
+|                                                                              |
+| The example database "hubway.db" is credited to Dataquest.io                 |
+| (https://www.dataquest.io/blog/sql-basics/).                                 |
+|                                                                              |
+| Permission is hereby granted, free of charge, to any person obtaining a      |
+| copy of this software and associated documentation files (the "Software"),   |
+| to use, copy, modify, merge, publish, distribute, sublicense, and/or sell    |
+| copies of the Software, provided that:                                       |
+|                                                                              |
+| 1. The original author(s) and source of the content are credited when using  |
+|    or quoting the work.                                                      |
+|                                                                              |
+| 2. IMPORTANT CUSTOM RESTRICTION:                                             |
+|    This software must not be modified by any party to invade the GitHub      |
+|    account or any other account of Marcos Silveira Gonzalez Júnior. Any      |
+|    entity violating this clause will be held legally accountable to the      |
+|    author.                                                                   |
+|                                                                              |
+| The above copyright notice, this custom restriction, and this permission     |
+| notice must be included in all copies or substantial portions of the         |
+| Software.                                                                    |
+|                                                                              |
+| Disclaimer:                                                                  |
+| THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR   |
+| IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,     |
+| FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL     |
+| THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER  |
+| LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING     |
+| FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         |
+| DEALINGS IN THE SOFTWARE.                                                    |
++------------------------------------------------------------------------------+
