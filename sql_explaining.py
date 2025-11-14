@@ -583,3 +583,57 @@ PS: BETWEEN is inclusive for both endpoints. So it will show
 everything from Boston and Denver with both included, in this
 example, in particular. The others will follow the same logic.
 """
+# --- Aliases --- #
+"""
+When given a table or a column, we may choose not to use their
+real names. We can do that to make our tables, or a column,
+more approachable. Facilitating reading and simplifying queries.
+To do that we will use the AS keyword. These aliases only exist
+for the duration of a specific query. The syntax is as follows:
+SELECT column AS alias
+FROM table
+In a real case, it would look like this:
+SELECT municipality AS city
+FROM stations
+The same syntax applies to a table.
+We can choose to add two or more aliases. To do that, we
+only need a comma after the first alias is set.
+To add spaces, or create a sentence as an alias, we need
+the use of brackets. For example:
+SELECT municipality AS [A city inside the United States]
+FROM stations
+PS: that alias was convoluted haha
+We can also use double quotes instead of brackets.
+We can choose to concatenate columns. To do that,
+we will use this syntax:
+SELECT Column_1 || ', ' || Column_02 AS Something
+FROM table
+A real example using the two possibilities above would
+be this:
+SELECT municipality || ', ' || lat AS ['City and Lat']
+FROM stations
+This query would return the municipality, followed by a
+comma and a space, then followed by the latitude.
+'City and Lat'
+Cambridge, 42.356543...
+We would combine columns and change their aliases.
+If you don't want the apostrophe on the column name, then the
+code would be this:
+SELECT municipality || ', ' || lat AS [City and Lat]
+FROM stations
+However, they - brackets or quotes - are necessary to include special
+characters - e.g. spaces, accents, punctuation and so on - in your alias.
+We can also give an alias to a table. It's useful when used
+with multiple tables.
+For example:
+SELECT a.Column_01, a.Column_02
+FROM table_01 AS a, table_02 AS b
+WHERE a.Column_01 = 'Something' AND a.Column_02 = b.Column_02
+This would return all the records where a.Column_02 equals
+to b.Column_02, and both have these columns, AND where a.Column_01
+have a value of 'Something'
+So, to summarize:
+Aliases should be used for readability when functions are in use;
+there is more than and one table in a query; when we want to combine columns,
+and for readability.
+"""
