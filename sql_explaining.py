@@ -693,4 +693,20 @@ PS: when writing JOIN clauses, we need to remember
 that when we define the clause FROM, we define the LEFT
 table. In other words: the table that we'll put on the LEFT
 on a visualization of the statement as a venn diagram.
+Non-matching rows from the right table appear
+as NULLs.
+"""
+# --- RIGHT JOIN --- #
+"""
+When we talked about the LEFT JOIN keyword, we
+basically talked about the RIGHT JOIN keyword.
+The differences are conceptual.
+But, for the sake of consistency, let's give the syntax:
+SELECT a.Column_01, b.Column_02
+FROM b
+RIGHT JOIN a ON b.Column_01 = a.Column_01;
+The return is a query with all the rows from the right (a) table,
+and all matching rows from Column_01 that is contained
+within both tables. Non-matching rows from the left table appear
+as NULLs.
 """
