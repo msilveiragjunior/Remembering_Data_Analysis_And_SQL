@@ -673,4 +673,24 @@ The INNER (keyword) JOIN (clause) keyword is one where
 all values in the columns defined with SELECT will be returned if
 , in a comparison query, values that are selected to be compared coincide
 in both tables will be selected.
+The syntax is as follows:
+SELECT a.Column_01, b.Column_02
+FROM b
+INNER JOIN a ON b.Column_01 = a.Column_01;
+This will return all values from column_01 and column_02
+that are within the row of the column_01 comparison.
+"""
+# --- LEFT JOIN --- #
+"""
+Well, we covered the LEFT JOIN with an example before,
+when we were explaining the JOIN clause. But let's repeat it
+here, just for the sake of redundancy.
+The syntax is as follows:
+SELECT a.Column_01, b.Column_02
+FROM b
+LEFT JOIN a ON b.Column_01 = a.Column_01;
+PS: when writing JOIN clauses, we need to remember
+that when we define the clause FROM, we define the LEFT
+table. In other words: the table that we'll put on the LEFT
+on a visualization of the statement as a venn diagram.
 """
