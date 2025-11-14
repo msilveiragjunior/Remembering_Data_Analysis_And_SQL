@@ -750,3 +750,35 @@ of duplicates. When we compare these two aliases, we will have,
 as a product, duplicates of the same comparison, because the tables
 are the same.
 """
+# --- UNION --- #
+"""
+The UNION operator acts like a FULL join operator, but for
+statements.
+When you declare it, the query will combine the result of two or more
+SELECT statements and remove duplicate rows from the resulting query.
+There are caveats: the columns on the statements must have equal data
+types; the statement must have the same number of columns, and the columns
+must be in the same order.
+The syntax is as follows:
+SELECT column
+FROM table_01
+UNION
+SELECT column
+FROM table_02
+I will show a real case with a more complex UNION operator statement.
+You can use UNION ALL to retain all the duplicates from the query.
+Let's give a real example:
+SELECT municipality, address
+FROM stations_01
+WHERE municipality='Cambridge' AND address LIKE '%a%'
+UNION
+SELECT municipality, address
+FROM stations_02
+WHERE municipality='London' AND address LIKE '%b%'
+This will return all the rows where municipality
+is equal to Cambridge, and London, and where the address contains
+the letter a anywhere in it or the letter b in it - Cambridge and the letter
+a; London and letter b.
+PS: you can think about the sum of the selects as a result-set, from
+a set theory.
+"""
