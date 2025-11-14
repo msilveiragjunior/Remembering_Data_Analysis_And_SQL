@@ -727,3 +727,26 @@ It's completely normal and explainable:
 Not every field will have a value when comparing
 both tables.
 """
+# --- SELF JOIN --- #
+"""
+When we talk about self join, we need to show, first,
+how simple it really is, conceptually:
+It's the combination of a table with itself. It is as simple as that.
+The syntax is as follows:
+SELECT column
+FROM table ALIAS_01, table ALIAS_02
+WHERE condition
+So if we where to give a real example, it would be:
+SELECT Address, municipality
+FROM stations S1, stations S2
+WHERE S1.Address <> S2.Address
+AND S1.municipality = S2.municipality
+This will return the query of all
+Addresses of the cartesian product that are different from
+S1 and S2 - the same table, but with different aliases - and
+the municipality are the same.
+PS: on the WHERE line, we don't address the problem
+of duplicates. When we compare these two aliases, we will have,
+as a product, duplicates of the same comparison, because the tables
+are the same.
+"""
