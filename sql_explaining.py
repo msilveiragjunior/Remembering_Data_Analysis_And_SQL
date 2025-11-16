@@ -782,3 +782,17 @@ a; London and letter b.
 PS: you can think about the sum of the selects as a result-set, from
 a set theory.
 """
+# --- UNION ALL --- #
+"""
+The UNION ALL operator acts almost exactly like the UNION operator,
+with a little caveat: it does not remove the duplicates from the
+resulting query.
+For the sake of continuity, let's give the syntax:
+SELECT column
+FROM table_01
+UNION ALL
+SELECT column
+FROM table_02
+This will return all rows of column from table_01 and combine
+with table_02 returns.
+"""
