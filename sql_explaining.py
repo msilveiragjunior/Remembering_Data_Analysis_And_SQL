@@ -795,4 +795,52 @@ SELECT column
 FROM table_02
 This will return all rows of column from table_01 and combine
 with table_02 returns.
+PS: The UNION ALL operator is faster than the UNION operator,
+as it does not have to deduplicate any field that is queried.
+"""
+# --- GROUP BY --- #
+"""
+When we need a statement that creates summary rows of a statement,
+we'll need the GROUP BY clause to do it.
+We have few things that distinguish it from ORDER BY:
+It's inherently capable of grouping rows, by effect: deduplicating rows;
+you can use aggregate functions with it.
+The syntax is as follows:
+SELECT column
+FROM table
+WHERE condition
+GROUP BY column;
+So when we use it with a real case, it would look like this:
+SELECT municipality, COUNT(address) AS [Number of Addresses]
+FROM stations
+GROUP BY municipality
+This will return the name of the municipality, followed by the number
+of addresses per municipality.
+Output example:
+municipality | Number of Addresses
+Cambridge       4
+So, to finish, GROUP BY is an extremely useful clause.
+It's a clause that does calculations and one that deduplicates rows,
+all while summarizing rows.
+"""
+# --- HAVING --- #
+"""
+The HAVING clause is extremely simple, and the reason for
+its existence is also simple: it's because the WHERE keyword
+cannot be used with aggregates.
+So, following the examples above and maintaining consistency,
+here's the syntax:
+SELECT column
+FROM table
+WHERE condition <---- It does not support aggregates
+HAVING condition <--- It does support aggregates
+In a real case example, it would look like this:
+SELECT COUNT(address), municipality
+FROM stations
+GROUP BY municipality
+HAVING COUNT(address) > 5;
+This will return all the rows grouped by municipality
+where the number of addresses is higher than 5.
+To summarize: the HAVING clause is a "on demand
+clause" - it exists because WHERE couldn't handle aggregates.
 """
