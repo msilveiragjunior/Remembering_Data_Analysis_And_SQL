@@ -989,7 +989,8 @@ END);
 The return is this:
 If municipality is null, then it will return Country, by order.
 Else, it will return by id.
-PS: When using an ALIAS, you need to put the case order, by using this syntax,
-after the SELECT statement, and after the comma from the columns.
+PS: When using an ALIAS, you need to order correctly the CASE expression,
+by using this syntax; after the SELECT statement, and after the comma from
+the columns.
 This is necessary because the alias pertains to the SELECT statement.
 """
