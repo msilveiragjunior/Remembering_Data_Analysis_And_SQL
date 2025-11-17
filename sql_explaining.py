@@ -914,3 +914,24 @@ WHERE lat >= 42.35);
 This will return the list of municipalities, if the condition is met,
 but, also, only because all the comparisons match.
 """
+# ---  SELECT INTO --- #
+"""
+The SELECT INTO statement is the junction between
+the SELECT statement and the INTO clause. The explanation
+behind how it works is quite simple: the statement copies all the
+data, from selected columns, from one table into a new table.
+The syntax is as follows:
+SELECT *
+INTO new_table [IN database]
+FROM table
+WHERE condition;
+If we were to apply it to a real case, it would look like this:
+SELECT *
+INTO new_stations [IN users_02]
+FROM stations
+WHERE municipality = 'Cambridge';
+The result is a copy of the table stations where
+municipality column equals 'Cambridge'.
+PS: The IN clause does not create a new database if there's none.
+The database defined in the clause shall already exist.
+"""
