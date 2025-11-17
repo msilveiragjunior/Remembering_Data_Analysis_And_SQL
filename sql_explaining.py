@@ -963,3 +963,31 @@ INSERT INTO new_table
 SELECT *
 FROM stations;
 """
+# --- CASE --- #
+"""
+When dealing with conditional logic, we need a type of loop.
+SQL deals with it by using the CASE expression.
+The CASE expression works like an if-elif-else loop from python.
+Whenever a condition is met, it will return the result from
+the condition.
+The syntax is as follows:
+SELECT *,
+    CASE
+        WHEN condition THEN result
+        WHEN condition_2 THEN result_2
+        ELSE result_3
+    END
+FROM table;
+Writing a real case for this will look like this:
+SELECT municipality, address, id
+FROM stations
+ORDER BY
+(CASE
+    WHEN municipality IS NOT NULL THEN Country
+    ELSE id
+END);
+The return is this:
+If municipality is null, then it will return Country, by order.
+Else, it will return by id.
+PS: When using an ALIAS, you need to put the case order, by using this syntax,
+"""
