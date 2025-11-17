@@ -1059,8 +1059,8 @@ EXEC SelectMunicipalities @City = 'Cambridge'
 
 Here we create a stored procedure called SelectMunicipalities,
 then we define the parameter @City to be varchar with
-20 characters. We define a varchar because of, byte-wise, it is more 
-efficient than nvarchar, storing only one byte per character instead of 
+20 characters. We define a varchar because of, byte-wise, it is more
+efficient than nvarchar, storing only one byte per character instead of
 two, which saves space in databases with large amounts of text.
 Then we define the procedure with the alias AS, to select
 all columns from stations WHERE municipality is equal to
@@ -1072,8 +1072,8 @@ that will be written over and over again.
 """
 # --- COMMENTS --- #
 """
-Well, the synthesis of this topic is 
-self-explanatory by its title. 
+Well, the synthesis of this topic is
+self-explanatory by its title.
 To comment a single line, we place two
 hyphens at the beginning of the line.
 The syntax is as follows:
@@ -1091,4 +1091,45 @@ this is a multi-line commentary */
 SELECT municipality
 FROM stations;
 To summarize: a commentary is a commentary haha.
+"""
+# --- OPERATORS --- #
+"""
+Operators are the special keywords and symbols used to perform
+operations on SQL.
++	Add
+-	Subtract
+%	Modulo
+/	Divide
+*	Multiply
+Logical:
+&   AND
+|   OR
+^	Exclusive OR
+ALL If all subquery values meet the conditions, it's true.
+AND If all conditions, separated by AND are true.
+ANY If any subquery values are true
+BETWEEN All the values between a range
+EXISTS If a subquery returns one or more values
+LIKE If the operand is equal to the value given
+NOT To negate a TRUE condition
+OR If any of the conditions are true in an expression
+SOME Used to verify if a scalar value meets a condition in an expression
+Compound:
++=  Add equal
+-=  Subtract equal
+*=  Multiply equal
+%=  Modulo equal
+&=  AND equal
+^   Exclusive OR equal
+|*= OR equal
+/=  Divide equal
+Comparison:
+=   Equals
+>   Greater
+<   Less
+>=  Greater or equal
+<=  Less or equal
+<>  Different from
+To finish this part of the repo:
+We've managed to remember the basics of SQL. :D
 """
