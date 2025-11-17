@@ -841,6 +841,7 @@ GROUP BY municipality
 HAVING COUNT(address) > 5;
 This will return all the rows grouped by municipality
 where the number of addresses is higher than 5.
-To summarize: the HAVING clause is a "on demand
+To summarize: the HAVING clause is an "on-demand
 clause" - it exists because WHERE couldn't handle aggregates.
+PS: HAVING always comes after the GROUP BY clause. Remember this.
 """
