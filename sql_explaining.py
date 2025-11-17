@@ -1021,20 +1021,20 @@ COALESCE being the only one that takes multiple arguments.
 """
 # --- STORED PROCEDURES --- #
 """
-We're almost on the end of this 'remembering sql' part
+We're almost on the end of this 'remembering SQL' part
 of this repo.
 When we talk about stored procedures, in SQL, we can make
-a parallel over python def functions - or methods, when they
+a parallel over Python def functions - or methods, when they
 are encapsulated within classes. They both share conceptual similarities:
 They are used to encapsulate a set of instructions and to be called and
-recalled. They accept parameters; stored procedures can also do it,
-but they return parameters; python return functions return values.
+recalled. They accept parameters; stored procedures can also do this,
+but they return parameters; Python return functions return values.
 They are modular, compartmentalizing parts into smaller parts.
 However, there are key differences between them:
 Their purpose: stored procedures are used to run complex data
 transformations, by enforcing integrity of data and security -
 while controlling the access granted to a user.
-Return values are always returned by a python function, even if
+Return values are always returned by a Python function, even if
 it's a None value. Stored procedures may return values, but
 they are not a necessary condition.
 So, to summarize, as we are doing so far, a stored procedure
@@ -1047,8 +1047,8 @@ statement
 GO;
 And to execute the procedure, we follow this syntax:
 EXEC procedure
-While we can use STORED PROCEDURES with SQL Standard,
-we can't do it with sqlite.
+While stored procedures can be used with SQL Standard,
+SQLite doesn't support them.
 So we'll create a real case with SQL Standard:
 CREATE A PROCEDURE SelectMunicipalities @City varchar(20)
 AS
@@ -1059,11 +1059,36 @@ EXEC SelectMunicipalities @City = 'Cambridge'
 
 Here we create a stored procedure called SelectMunicipalities,
 then we define the parameter @City to be varchar with
-20 characters. We define a varchar because of, byte-wise, it's
-inherently more efficient when dealing with space limited databases.
+20 characters. We define a varchar because of, byte-wise, it is more 
+efficient than nvarchar, storing only one byte per character instead of 
+two, which saves space in databases with large amounts of text.
 Then we define the procedure with the alias AS, to select
-all columns from stations WHERE, municipality is equal to
+all columns from stations WHERE municipality is equal to
 a string.
 It will return all the rows where Cambridge appears.
 We can also use all the definitions seen before with a stored procedure.
+To summarize: it's a very efficient method to store statements
+that will be written over and over again.
+"""
+# --- COMMENTS --- #
+"""
+Well, the synthesis of this topic is 
+self-explanatory by its title. 
+To comment a single line, we place two
+hyphens at the beginning of the line.
+The syntax is as follows:
+-- Select municipality:
+SELECT municipality
+FROM stations;
+All the line, after the two hyphens will be defined
+as a commentary.
+To use a multi-line comment, we will use a slash bar (/)
+with a asterisk (*) - i.e. /* - and a asterisk followed
+by a slash bar at the end of the commentary, the syntax
+is as follows:
+/* Select municipality:
+this is a multi-line commentary */
+SELECT municipality
+FROM stations;
+To summarize: a commentary is a commentary haha.
 """
