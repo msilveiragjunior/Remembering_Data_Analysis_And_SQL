@@ -1019,3 +1019,51 @@ then it'll return 0.
 To summarize, their purposes are almost the same, with
 COALESCE being the only one that takes multiple arguments.
 """
+# --- STORED PROCEDURES --- #
+"""
+We're almost on the end of this 'remembering sql' part
+of this repo.
+When we talk about stored procedures, in SQL, we can make
+a parallel over python def functions - or methods, when they
+are encapsulated within classes. They both share conceptual similarities:
+They are used to encapsulate a set of instructions and to be called and
+recalled. They accept parameters; stored procedures can also do it,
+but they return parameters; python return functions return values.
+They are modular, compartmentalizing parts into smaller parts.
+However, there are key differences between them:
+Their purpose: stored procedures are used to run complex data
+transformations, by enforcing integrity of data and security -
+while controlling the access granted to a user.
+Return values are always returned by a python function, even if
+it's a None value. Stored procedures may return values, but
+they are not a necessary condition.
+So, to summarize, as we are doing so far, a stored procedure
+is a part of a code that we can use and reuse: like a query
+that can be saved and called.
+The syntax is as follows:
+CREATE PROCEDURE procedure
+AS
+statement
+GO;
+And to execute the procedure, we follow this syntax:
+EXEC procedure
+While we can use STORED PROCEDURES with SQL Standard,
+we can't do it with sqlite.
+So we'll create a real case with SQL Standard:
+CREATE A PROCEDURE SelectMunicipalities @City varchar(20)
+AS
+SELECT * FROM stations WHERE municipality = @City
+GO;
+To execute it:
+EXEC SelectMunicipalities @City = 'Cambridge'
+
+Here we create a stored procedure called SelectMunicipalities,
+then we define the parameter @City to be varchar with
+20 characters. We define a varchar because of, byte-wise, it's
+inherently more efficient when dealing with space limited databases.
+Then we define the procedure with the alias AS, to select
+all columns from stations WHERE, municipality is equal to
+a string.
+It will return all the rows where Cambridge appears.
+We can also use all the definitions seen before with a stored procedure.
+"""
