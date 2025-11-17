@@ -101,3 +101,19 @@ def in_operator(table, column, value):
             "FROM {} " \
             "WHERE {} IN ({});".format(table, column, string)
     return in_op
+
+
+# We've done the in_operator before. Now we'll mix it with
+# the INTO clause, to copy everything into a new table, inside
+# another database.
+# def into_clause(name_of_database, table, condition):
+#    into_clause = "SELECT * " \
+#                  "INTO new_table [IN {}]" \
+#                  "FROM stations " \
+#                  "WHERE {} IN ({});".format(name_of_database, table,
+#                                             condition)
+#    return into_clause
+# Just remembered the IN database does not work with python. We
+# need so send a new cursor, by establishing a new connection
+# with the database and, then, sending the cursor as an object to the function.
+# By doing this, we are able to deal with this unfortunate problem.

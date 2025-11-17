@@ -529,7 +529,7 @@ if no wildcard is defined. The exact match of a string will be queried.
 """
 # --- In Operator --- #
 """
-The IN operator works as way to define multiple values with the WHERE
+The IN operator works as a way to define multiple values with the WHERE
 clause, allowing you to query multiple strings.
 The syntax is simple:
 SELECT column
@@ -934,4 +934,6 @@ The result is a copy of the table stations where
 municipality column equals 'Cambridge'.
 PS: The IN clause does not create a new database if there's none.
 The database defined in the clause shall already exist.
+Let's apply the real condition example with a pythonic format,
+with sqlite.
 """

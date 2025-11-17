@@ -172,7 +172,7 @@ def like_operator():
         print(*i, "\n")
 
 
-# Here we'll define de function that will carry the code for the IN
+# Here we'll define the function that will carry the code for the IN
 # Operator:
 def in_operator():
     values = []
@@ -190,7 +190,24 @@ def in_operator():
         print(*i, "\n")
 
 
-in_operator()
+# Here we're defining the function that will codify our SELECT INTO
+# statement. It will join the the above example of the IN operator.
+# def into_clause():
+#    name_of_database = input("Enter the name of the db where you want"
+#                             " to enter the new table: \n")
+#    key = input("Enter the name of the table from which you want the"
+#                " information: \n")
+#    print("The default SELECT is * (all).")
+#    condition = input("Enter the condition in between apostrophes (''): \n")
+#    select_into = table_01_sql.into_clause(name_of_database, key, condition)
+#    print(select_into)
+#    rows = cursor.fetchall()
+#    for i in rows:
+#        print(*i, "\n")
+# Well, just remembered this does not work with sqlite. haha
+
+# into_clause()
+# in_operator()
 # like_operator()
 # check_null_or_not_null()
 # select_orderby_function()
