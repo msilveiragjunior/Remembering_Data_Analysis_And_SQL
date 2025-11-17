@@ -845,3 +845,28 @@ To summarize: the HAVING clause is an "on-demand
 clause" - it exists because WHERE couldn't handle aggregates.
 PS: HAVING always comes after the GROUP BY clause. Remember this.
 """
+# --- EXISTS --- #
+"""
+EXISTS is an operator that is mainly used with the WHERE and the HAVING
+clause. It's used to evaluate a subquery as false or true.
+If it returns at least one row, then the query returns its rows;
+if it doesn't, then the query will return an empty table of rows and columns.
+The syntax is as follows:
+SELECT column
+FROM table
+WHERE EXISTS
+(SELECT column FROM table WHERE condition);
+So if we were to apply it to a real case, it would look like this:
+SELECT municipality
+FROM stations
+WHERE EXISTS
+(SELECT NumberOfCustomers
+FROM Customers
+WHERE Customers.municipality = stations.municipality
+AND NumberOfCustomers >= 5);
+This will return all municipalities where the number of
+customers in Customers, is greater than or equal
+(>=) to 5 and the municipality in stations matches
+the municipality from Customers.
+To summarize: this operator is simple to understand and apply.
+"""
