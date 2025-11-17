@@ -937,3 +937,29 @@ The database defined in the clause shall already exist.
 Let's apply the real condition example with a pythonic format,
 with sqlite.
 """
+# --- INSERT INTO SELECT--- #
+"""
+The INSERT INTO SELECT statement gets a copy of information from a table
+and inserts it into another table.
+There are two caveats: data types and tables match the target's tables;
+so they should match in type and order when we don't explicitly list them.
+The syntax is as follows:
+INSERT INTO table_02
+SELECT *
+FROM table
+WHERE condition;
+And, when applying it to a real case, it would look like this:
+INSERT INTO new_table (municipality_backup, address_backup)
+SELECT municipality, address
+FROM stations
+By doing this, we make a copy of all rows from municipality and address,
+from stations table, to the new table's columns.
+We can also make a backup copy of a given table with this syntax:
+INSERT INTO table_02
+SELECT *
+FROM table;
+If we were doing this with our real case, it would look like this:
+INSERT INTO new_table
+SELECT *
+FROM stations;
+"""
