@@ -993,4 +993,29 @@ PS: When using an ALIAS, you need to order correctly the CASE expression,
 by using this syntax; after the SELECT statement, and after the comma from
 the columns.
 This is necessary because the alias pertains to the SELECT statement.
+Also, if there's no ELSE inside the CASE expression, and the ELSE
+condition is met, then it will return a NULL value.
+"""
+# --- NULL FUNCTIONS --- #
+"""
+Whenever we deal with SELECT statements that can return a null value,
+we can evade it by using the NULL Functions:
+IFNULL(); ISNULL(), COALESCE().
+This will make easier dealing with null values.
+Let's begin with the IFNULL() function:
+IFNULL(Units, 0) will substitute the null value
+and will return 0, instead.
+So with SELECT IFNULL(Units, 0) FROM Orders;
+will return 0 from Orders.
+The IFNULL will return the expression if the
+expression is NOT null, otherwise, it will return the
+specified value, in this case, it's 0.
+The ISNULL() is largely equivalent to the IFNULL() function.
+Their primary distinction is their names.
+The COALESCE() function will return the first non-null
+value in an expression.
+So if we give the expression COALESCE(NULL, 0, NULL, 3, 'Example'),
+then it'll return 0.
+To summarize, their purposes are almost the same, with
+COALESCE being the only one that takes multiple arguments.
 """
