@@ -870,3 +870,47 @@ customers in Customers, is greater than or equal
 the municipality from Customers.
 To summarize: this operator is simple to understand and apply.
 """
+# --- ANY and ALL --- #
+"""
+ANY and ALL are operators. They allow a data engineer to perform
+a comparison between a single column and other values.
+The comparison with the ANY operator returns a boolean as a result, and it will
+return TRUE if ANY of the comparison values match the condition.
+The syntax for the ANY operator is as follows:
+SELECT column
+FROM table
+WHERE column operator ANY
+(SELECT column
+FROM table
+WHERE condition);
+So, applying to a real case:
+SELECT municipality
+FROM stations
+WHERE lat >= ANY
+(SELECT lat
+FROM Customers
+WHERE lat >= 42.35);
+The result is a list of municipalities, but only because
+one of the comparisons matches.
+------------------------------------------------
+The comparison with the ALL operator returns a boolean only if
+all the subquery values meet the condition.
+To summarize: it is true, and only true, if the condition is met
+for all values.
+The syntax is as follows:
+SELECT column
+FROM table
+WHERE column operator ALL
+(SELECT column
+FROM table
+WHERE condition);
+When applying it to a real case as an example:
+SELECT municipality
+FROM stations
+WHERE lat >= ALL
+(SELECT lat
+FROM Customers
+WHERE lat >= 42.35);
+This will return the list of municipalities, if the condition is met,
+but, also, only because all the comparisons match.
+"""
