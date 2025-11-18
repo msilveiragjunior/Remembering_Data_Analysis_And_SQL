@@ -104,3 +104,16 @@ to use SQL Injection to manipulate its data. We are using
 the code above just to clarify each aspect of the
 CREATE TABLE statement.
 """
+# --- DROP TABLE --- #
+"""The DROP TABLE statement in SQL is used to delete a table permanently:
+all its data and information stored, along with the table itself.
+The syntax is as follows:
+DROP TABLE table;
+We can also remove only the data inside a table with the
+TRUNCATE TABLE statement.
+This statement deletes the data inside the table, but not the table.
+PS:
+Without a backup, all data will be lost.
+So it's a permanent action executed by our database management system
+(DBMS).
+"""
