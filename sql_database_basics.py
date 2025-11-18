@@ -32,3 +32,14 @@ It will return the name of the databases in our server.
 PostgreSQL uses \\l inside psql, and SQLite shows databases inside our
 directory.
 """
+# --- DROP DATABASE --- #
+"""
+The DROP DATABASE statement in SQL is used to delete a database permanently:
+all its data and information stored, along with the database itself.
+The syntax is as follows:
+DROP DATABASE database;
+PS:
+Without a backup, all data will be lost.
+So it's a permanent action executed by our database management system
+(DBMS).
+"""
