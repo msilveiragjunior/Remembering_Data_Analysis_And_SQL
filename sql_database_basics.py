@@ -26,4 +26,9 @@ connection = sqlite3.connect('database.db')
 This would create a connection to a given database, and would
 create the file if it didn't exist before.
 To summarize: CREATE DATABASE creates a new SQL database.
+PS: To check if the database was created, we need to use the statement
+SHOW DATABASES - this will work with MySQL.
+It will return the name of the databases in our server.
+PostgreSQL uses \\l inside psql, and SQLite shows databases inside our
+directory.
 """
