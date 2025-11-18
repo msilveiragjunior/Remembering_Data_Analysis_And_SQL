@@ -43,3 +43,33 @@ Without a backup, all data will be lost.
 So it's a permanent action executed by our database management system
 (DBMS).
 """
+# --- BACKUP DATABASE --- #
+"""
+We can use the BACKUP DATABASE statement in SQL Server to create
+a complete backup of a given database.
+The syntax is as follows:
+BACKUP DATABASE database
+TO DISK = 'name_of_the_path';
+We can also update the contents of the database with the
+DIFFERENTIAL clause.
+The syntax would look like this:
+BACKUP DATABASE database
+TO DISK = 'name_of_the_path'
+WITH DIFFERENTIAL;
+A real case example would look like this:
+BACKUP DATABASE stations
+TO DISK = 'E:\\Databases\\stations.bak';
+Then, to save only the changes made since that backup, we would do this:
+BACKUP DATABASE stations
+TO DISK = 'E:\\Databases\\stations.bak'
+WITH DIFFERENTIAL;
+PS:
+PostgreSQL uses its own backup tools (such as `pg_dump`),
+so it does not support the BACKUP DATABASE statement.
+SQLite databases can be backed up using its CLI or by copying
+the database file directly (e.g., with Python:
+with open('database.db', 'rb') as src, open('backup.db', 'wb') as dst:
+    dst.write(src.read()));
+With the SQLite CLI installed, we can also use:
+sqlite3 database.db ".backup database_backup.db".
+"""
