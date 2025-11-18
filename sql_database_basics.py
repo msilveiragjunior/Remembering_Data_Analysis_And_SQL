@@ -83,7 +83,7 @@ CREATE TABLE table (
     column datatype,
     column_02 datatype,
     column_03 datatype);
-We've covered the creation of a table using python inside the file
+We've covered the creation of a table using Python inside the file
 table_01_sql.py:
 def create_table(table_name, index, username, email):
     create_user_table = 'CREATE TABLE {} (' \
@@ -92,6 +92,12 @@ def create_table(table_name, index, username, email):
                          '{} TEXT' \
                         ')'.format(table_name, index, username, email)
     return create_user_table;
+We can also create a table using another table, and I'm pretty sure
+we've covered it in the sql_basics.py file.
+But, for the sake of consistency, let's show the syntax:
+CREATE TABLE new_table AS
+    SELECT *
+    FROM table;
 PS:
 Remember, this is not a parameterized string, so it's possible
 to use SQL Injection to manipulate its data. We are using
