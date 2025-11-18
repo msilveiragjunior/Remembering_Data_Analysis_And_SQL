@@ -121,5 +121,35 @@ So it's a permanent action executed by our database management system
 """
 # --- ALTER TABLE --- #
 """
-
+The ALTER TABLE statement is used to add, drop constraints from a table but,
+also, is used to add, delete, or modify columns in a table.
+While using SQLite, ALTER TABLE statement is difficult to use, all because
+the way SQLite implements a schema.
+With SQL Server, we can ADD and DROP a column; also ALTER a datatype
+and RENAME a table.
+The syntaxes are as follows:
+ALTER TABLE table
+ADD column datatype; <---- This will work with SQLite
+This will add a new column with a specific datatype.
+ALTER TABLE table
+DROP COLUMN column; <---- This will work with SQLite
+This will delete a column in a table.
+ALTER TABLE table
+RENAME COLUMN old_name to new_name; <---- This will work with SQLite
+This will rename a column's name.
+ALTER TABLE table
+ALTER COLUMN column new_datatype; <---- This will NOT work with SQLite
+This will modify a column's datatype.
+ALTER TABLE table
+RENAME TO new_table_name; <---- This will work with SQLite
+This will modify a table's name.
+PS: There are a lot of caveats with SQLite ALTER TABLE, such as:
+it cannot modify a column's data type and it cannot add or remove
+constraints from an existing table directly. 
+To alter the schema design, like modifying datatypes, we need
+to follow few steps in SQLite:
+1 -  we need to create a new table.
+2 -  copy the data from the old table to the new table.
+3 -  drop the table.
+4 -  rename the new table using the old name. 
 """
