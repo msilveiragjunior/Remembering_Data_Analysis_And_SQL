@@ -73,3 +73,28 @@ with open('database.db', 'rb') as src, open('backup.db', 'wb') as dst:
 With the SQLite CLI installed, we can also use:
 sqlite3 database.db ".backup database_backup.db".
 """
+# --- CREATE TABLE --- #
+"""
+Now we enter a realm where we can use Python to manipulate the database:
+one where we can send strings with statements to create a table.
+The CREATE TABLE statement is fully functional within the SQLite framework.
+The syntax is as follows:
+CREATE TABLE table (
+    column datatype,
+    column_02 datatype,
+    column_03 datatype);
+We've covered the creation of a table using python inside the file
+table_01_sql.py:
+def create_table(table_name, index, username, email):
+    create_user_table = 'CREATE TABLE {} (' \
+                         '{} INTEGER PRIMARY KEY AUTOINCREMENT,' \
+                         '{} TEXT,' \
+                         '{} TEXT' \
+                        ')'.format(table_name, index, username, email)
+    return create_user_table;
+PS:
+Remember, this is not a parameterized string, so it's possible
+to use SQL Injection to manipulate its data. We are using
+the code above just to clarify each aspect of the
+CREATE TABLE statement.
+"""
