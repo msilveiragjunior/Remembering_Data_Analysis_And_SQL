@@ -111,9 +111,15 @@ The syntax is as follows:
 DROP TABLE table;
 We can also remove only the data inside a table with the
 TRUNCATE TABLE statement.
+To maintain consistency, the syntax is as follows:
+TRUNCATE TABLE table;
 This statement deletes the data inside the table, but not the table.
 PS:
 Without a backup, all data will be lost.
 So it's a permanent action executed by our database management system
 (DBMS).
+"""
+# --- ALTER TABLE --- #
+"""
+
 """
