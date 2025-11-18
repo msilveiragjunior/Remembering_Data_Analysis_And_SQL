@@ -145,11 +145,11 @@ RENAME TO new_table_name; <---- This will work with SQLite
 This will modify a table's name.
 PS: There are a lot of caveats with SQLite ALTER TABLE, such as:
 it cannot modify a column's data type and it cannot add or remove
-constraints from an existing table directly. 
+constraints from an existing table directly.
 To alter the schema design, like modifying datatypes, we need
 to follow few steps in SQLite:
 1 -  we need to create a new table.
 2 -  copy the data from the old table to the new table.
 3 -  drop the table.
-4 -  rename the new table using the old name. 
+4 -  rename the new table using the old name.
 """
