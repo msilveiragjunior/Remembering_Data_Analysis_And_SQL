@@ -152,4 +152,5 @@ to follow few steps in SQLite:
 2 -  copy the data from the old table to the new table.
 3 -  drop the table.
 4 -  rename the new table using the old name.
+Let's create some examples using python, in the users.py file.
 """

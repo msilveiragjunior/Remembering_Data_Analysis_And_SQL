@@ -206,6 +206,31 @@ def in_operator():
 #        print(*i, "\n")
 # Well, just remembered this does not work with sqlite. haha
 
+# Here we're altering the table to our needs. In this case, we're renaming
+# the table and checking, with PRAGMA - SQLite specific command - to
+# see if the new table exists. If exists, we'll fetch its rows.
+# If rows are returned, we print that the table exists with the new name.
+# Otherwise, we print that the table does not exist.
+def alter_table():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    key_name = input("Enter the new name for the table: \n")
+    alter_name = f'ALTER TABLE "{key}" RENAME TO "{key_name}"'
+    print(alter_name)
+    try:
+        cursor.execute(alter_name)
+        print(f'Table "{key}" has been renamed to "{key_name}"')
+    except sqlite3.Error as e:
+        print("This error occurred: ", e)
+    cursor.execute(f'PRAGMA table_info ("{key_name}");')
+    rows = cursor.fetchall()
+    if rows:
+        print("Table exists now with the new name.\n")
+    else:
+        print("The table does not exist.\n")
+
+
+alter_table()
 # into_clause()
 # in_operator()
 # like_operator()
