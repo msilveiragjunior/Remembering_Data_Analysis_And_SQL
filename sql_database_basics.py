@@ -318,10 +318,42 @@ ADD CHECK (column <= 30); <---- This will not work with SQLite
 and, finally, the drop syntax:
 ALTER TABLE table
 ADD CONSTRAINT column; <---- This will not work with SQLite
-PS: Altering a table in SQLite does not work, remember it.
-And to create a new table, remember:
+PS: Altering constrain in a table in SQLite does not work, remember it.
+We need to create a new table to alter a constrain, remember:
 contrary to foreign keys constraints being deactivated when using
 SQLite, CHECK constraints are enforced and enabled by default,
 but only when you create a table. You cannot use it ALTER TABLE with
-columns, because ALTER TABLE cannot modify or drop columns, only tables.
+columns. You cannot use ALTER TABLE to add or modify CHECK constraints 
+on columns.
+"""
+# --- DEFAULT CONSTRAINT --- #
+"""
+A DEFAULT constraint is added to set a given value for a column.
+It will be added to all new fields if no value is specified.
+The syntax is as follows:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE,
+    column_04 datatype FOREIGN KEY REFERENCES stations(ID),
+    column_05 datatype DEFAULT 'value',
+    CHECK (column_03 <= 30)
+);
+Example (from W3Schools.com - all credits to them):
+CREATE TABLE Orders (
+    ID int NOT NULL,
+    OrderNumber int NOT NULL,
+    OrderDate date DEFAULT GETDATE()
+);
+Here, the DEFAULT constraint uses a function to
+insert the system date automatically. No need to insert anything manually.
+We can also alter a table:
+ALTER TABLE table
+ALTER column SET DEFAULT 'value'; <---- This will not work with SQLite
+And we can drop a DEFAULT constraint from a column:
+ALTER TABLE table
+ALTER COLUMN column DROP DEFAULT; <---- This will not work with SQLite
+PS: Remember the workaround to modify constraints in SQLite.
+PS²: All syntax shown here is for SQL Server. If it doesn't work in SQLite, 
+I already described workarounds in previous examples.
 """
