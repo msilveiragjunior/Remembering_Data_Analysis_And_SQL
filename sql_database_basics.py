@@ -154,3 +154,27 @@ to follow few steps in SQLite:
 4 -  rename the new table using the old name.
 Let's create some examples using python, in the users.py file.
 """
+# --- CONSTRAINTS --- #
+"""
+Constraints are specific rules for data in a column in a table.
+They can be defined when a table is created. While most of SQL database
+engines support ALTER TABLE to alter the constraint, SQLite does not.
+The steps to modify a constraint from a table are specified above, in
+the ALTER TABLE topic.
+The syntax for a constraint is as follows:
+CREATE TABLE table (
+    column datatype CONSTRAINT,
+    column_02 datatype CONSTRAINT,
+    column_03 datatype CONSTRAINT);
+There are several constraints for a column, such as:
+AUTOINCREMENT - Automatically increments a number for new rows added to the
+table.
+UNIQUE - All the values in a column are different
+PRIMARY KEY - Identifies a row uniquely in a table.
+FOREIGN KEY - Is a column that refers to a primary key of another table.
+CHECK - Verifies if a value in a column matches a condition.
+CREATE INDEX - Create indexes on a table, to speed data retrieval in
+transactions.
+DEFAULT - Specifies a default value for a column when a row is inserted.
+To summarize: constraints define the rules that a column will have to follow.
+"""
