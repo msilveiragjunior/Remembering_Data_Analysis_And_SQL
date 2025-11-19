@@ -176,6 +176,6 @@ CHECK - Verifies if a value in a column matches a condition.
 CREATE INDEX - Create indexes on a table, to speed data retrieval in
 transactions.
 DEFAULT - Specifies a default value for a column when a row is inserted.
-To summarize: constraints define the rules that a column will have 
+To summarize: constraints define the rules that a column will have
 to follow.
 """
