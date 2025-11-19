@@ -179,3 +179,29 @@ DEFAULT - Specifies a default value for a column when a row is inserted.
 To summarize: constraints define the rules that a column will have
 to follow.
 """
+# --- NOT NULL CONSTRAINT --- #
+"""
+When we talk about SQL, we have to remember that all the schemas,
+views, functions, tables and so on are made to hold values.
+With that in mind, we need to remind that a column contains a multitude
+of values. To keep them always fulfilled, we need a constraint to do that.
+The NOT NULL constraint makes a value have this behavior: enforces
+a column to never accept null values. By default, a column can have
+null values, and this is why it's a necessary constraint.
+The syntax of the constraint is simple:
+CREATE TABLE table (
+column datatype NOT NULL,
+column_02 datatype constraint);
+In this case, we are enforcing the NOT NULL constraint
+to column.
+Let's see how we would do it with ALTER TABLE:
+ALTER TABLE table
+ALTER COLUMN column datatype NOT NULL; <---- This doesn't work with SQLite.
+We've seen why this won't work with SQLite, but will work with, for example,
+SQL Server database.
+In MySQL, it would look like this:
+ALTER TABLE table
+MODIFY column datatype NOT NULL;
+In the end, it's a useful constraint that manages to overwrite the default
+behavior of SQL.
+"""
