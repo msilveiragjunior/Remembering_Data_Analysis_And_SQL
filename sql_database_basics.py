@@ -250,4 +250,36 @@ ALTER TABLE table
 DROP PRIMARY KEY column; <---- This doesn't work with SQLite.
 PS²: SQLite does not support adding or dropping
 PRIMARY KEY constraints via ALTER TABLE.
+PS³: If you try to add a NULL value to a PRIMARY KEY the
+database will throw an error.
+"""
+# --- FOREIGN KEY CONSTRAINT --- #
+"""
+A FOREIGN KEY constraint defines a value in a table that
+refers to a PRIMARY KEY from another table.
+A table that relates to another table, with a FOREIGN KEY,
+is called a child table. The table referenced is called a parent
+table.
+The syntax is as follows:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE,
+    column_04 datatype FOREIGN KEY REFERENCES stations(ID)
+);
+In SQLite it would look like this:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE,
+    CONSTRAINT name <---- Giving a name to the constraint
+    for good practice;
+    FOREIGN KEY (column_04) <---- FOREIGN KEY name
+    REFERENCES stations (ID) <---- Referenced column inside the table
+    ON DELETE SET NULL <---- When parent row is deleted - optional
+);
+PS: Constraints are disabled by default in SQLite, so we need to set the
+PRAGMA - the directive, or command to the compiler - to
+PRAGMA foreign_keys = ON. This is necessary, or the FOREIGN KEY will not
+work.
 """
