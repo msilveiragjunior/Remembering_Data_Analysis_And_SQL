@@ -323,7 +323,7 @@ We need to create a new table to alter a constrain, remember:
 contrary to foreign keys constraints being deactivated when using
 SQLite, CHECK constraints are enforced and enabled by default,
 but only when you create a table. You cannot use it ALTER TABLE with
-columns. You cannot use ALTER TABLE to add or modify CHECK constraints 
+columns. You cannot use ALTER TABLE to add or modify CHECK constraints
 on columns.
 """
 # --- DEFAULT CONSTRAINT --- #
@@ -354,6 +354,6 @@ And we can drop a DEFAULT constraint from a column:
 ALTER TABLE table
 ALTER COLUMN column DROP DEFAULT; <---- This will not work with SQLite
 PS: Remember the workaround to modify constraints in SQLite.
-PS²: All syntax shown here is for SQL Server. If it doesn't work in SQLite, 
+PS²: All syntax shown here is for SQL Server. If it doesn't work in SQLite,
 I already described workarounds in previous examples.
 """
