@@ -283,3 +283,45 @@ PRAGMA - the directive, or command to the compiler - to
 PRAGMA foreign_keys = ON. This is necessary, or the FOREIGN KEY will not
 work.
 """
+# --- CHECK CONSTRAINT --- #
+"""
+A CHECK constraint is used to limit that a value can be placed in a column.
+It's a CHECK condition for a column, allowing only certain values to be placed
+inside a column.
+The syntax is as follows:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE,
+    column_04 datatype FOREIGN KEY REFERENCES stations(ID)
+    CHECK (column_03 <= 30)
+);
+In SQLite it will look exactly like the above.
+But for aesthetics purposes, we can write like this:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE CHECK (column_03 <= 30),
+    column_04 datatype FOREIGN KEY REFERENCES stations(ID)
+);
+Or use CHECK to an entire table:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE,
+    column_04 datatype FOREIGN KEY REFERENCES stations(ID),
+    CHECK (COLUMN_03 <= 30 OR column_03 > column_02)
+);
+We can also use CHECK with the command ADD or DROP CONSTRAINT:
+ALTER TABLE table
+ADD CHECK (column <= 30); <---- This will not work with SQLite
+and, finally, the drop syntax:
+ALTER TABLE table
+ADD CONSTRAINT column; <---- This will not work with SQLite
+PS: Altering a table in SQLite does not work, remember it.
+And to create a new table, remember:
+contrary to foreign keys constraints being deactivated when using
+SQLite, CHECK constraints are enforced and enabled by default,
+but only when you create a table. You cannot use it ALTER TABLE with
+columns, because ALTER TABLE cannot modify or drop columns, only tables.
+"""
