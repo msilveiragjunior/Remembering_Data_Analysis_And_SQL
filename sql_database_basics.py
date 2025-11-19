@@ -204,4 +204,19 @@ ALTER TABLE table
 MODIFY column datatype NOT NULL;
 In the end, it's a useful constraint that manages to overwrite the default
 behavior of SQL.
+PS: If you try to constrain a NULL type value with a NOT NULL constraint,
+the database will throw an error.
+"""
+# --- UNIQUE CONSTRAINT --- #
+"""
+To ensure that a column will only have different values in it, we have
+to use the UNIQUE constraint to guarantee it.
+You can have many UNIQUE constraints per table.
+The syntax is as follows:
+CREATE TABLE table (
+column datatype NOT NULL UNIQUE,
+column_02 datatype DEFAULT 'string' <---- This will work with SQLite.
+);
+In this case, the first column is NOT NULL and UNIQUE.
+It cannot have NULL values, and all values in this column will be unique.
 """
