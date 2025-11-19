@@ -225,6 +225,29 @@ ADD UNIQUE (column); <---- This doesn't work with SQLite.
 We can also drop a constraint:
 ALTER TABLE table
 DROP UNIQUE column; <---- This doesn't work with SQLite.
-PS²: SQLite does not support adding or dropping 
+PS²: SQLite does not support adding or dropping
 UNIQUE constraints via ALTER TABLE.
+"""
+# --- PRIMARY KEY --- #
+"""
+A PRIMARY KEY is used to identify a unique value in a table.
+It's almost as a subset of UNIQUE. However, while we can
+create multiple columns with the UNIQUE constraint, and, in a table, only
+one column can be set as a PRIMARY KEY. To be fair, PRIMARY KEY
+is somewhere close to a NOT NULL plus a UNIQUE constraint.
+The syntax is as follows:
+CREATE TABLE Persons (
+    column datatype NOT NULL PRIMARY KEY,
+    column_02 datatype NOT NULL,
+    column_03 datatype UNIQUE,
+    column_04 datatype NOT NULL
+);
+PS: We can also alter the constraint from a column in a table:
+ALTER TABLE table
+ADD PRIMARY KEY (column); <---- This doesn't work with SQLite.
+Or drop the constraint:
+ALTER TABLE table
+DROP PRIMARY KEY column; <---- This doesn't work with SQLite.
+PS²: SQLite does not support adding or dropping
+PRIMARY KEY constraints via ALTER TABLE.
 """
