@@ -219,4 +219,12 @@ column_02 datatype DEFAULT 'string' <---- This will work with SQLite.
 );
 In this case, the first column is NOT NULL and UNIQUE.
 It cannot have NULL values, and all values in this column will be unique.
+PS: we can also alter the constraint from a column in a table:
+ALTER TABLE table
+ADD UNIQUE (column); <---- This doesn't work with SQLite.
+We can also drop a constraint:
+ALTER TABLE table
+DROP UNIQUE column; <---- This doesn't work with SQLite.
+PS²: SQLite does not support adding or dropping 
+UNIQUE constraints via ALTER TABLE.
 """
