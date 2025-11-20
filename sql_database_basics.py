@@ -390,3 +390,27 @@ writes.
 PS³: Because indexes are not inherently a constraint, you can manipulate them
 with SQLite.
 """
+# --- AUTO INCREMENT --- #
+"""
+The AUTO INCREMENT keyword is used in SQL to define a column that will
+generate a sequence of unique values, but only when new rows are created.
+It can be defined as AUTOINCREMENT - with SQLite - or AUTO_INCREMENT -
+with other SQL databases.
+The syntax is as follows:
+CREATE TABLE table(
+column_id datatype PRIMARY KEY AUTOINCREMENT - or AUTO_INCREMENT,
+column_02 datatype constraint,
+column_03 datatype); <---- This will work with SQLite
+When we insert a value into a table with autoincrement, you don't
+need to specify a value for the ID — it's automatically generated.
+It will auto-increment a value by a defined amount.
+So when we do this:
+INSERT INTO stations (municipality, person)
+VALUES ('New York','Andrew');
+It will automatically add a value to the column_id with
+autoincrement inside the table stations.
+PS: AUTOINCREMENT is a mechanism to generate values.
+So it gives the database a way to automatic generate values to
+a row.
+PS²: We've shown how it works in python with SQLite on the file table_01_sql.
+"""
