@@ -414,3 +414,35 @@ So it gives the database a way to automatic generate values to
 a row.
 PS²: We've shown how it works in python with SQLite on the file table_01_sql.
 """
+# --- Dealing with Dates --- #
+"""
+Normally, when dealing with dates, databases offer a datatype exclusive
+for data - e.g. MySQL gives us DATE, DATETIME, TIMESTAMP, and year.
+With SQLite, we'll don't have the datatype for dates, but we have the
+benefit of dealing with dates with flexibility. Also, we have built-in
+functions to work with certain formats.
+Normally we'll use the following format for TEXT dates:
+YYYY-MM-DD HH:MM:SS.SSS
+This is a format that is recommended for sorting and comparison.
+The syntax, in SQLite, is as follows:
+CREATE TABLE table (
+column_date TEXT,
+column_02 TEXT);
+To insert a date to column, we would do this:
+INSERT INTO table (column_date)
+VALUES ('2025-11-20 14:15:00')
+Or
+INSERT INTO table (column_date)
+VALUES ('2025-11-20')
+It would vary according to your usage and functions that are built into SQLite.
+For example, datetime(datetime_expression, modifier, ...) returns
+a date and time as 'YYYY-MM-DD HH:MM:SS.SSS' or 'YYYY-MM-DD HH:MM:SS'.
+date(datetime_expression, modifier, ...) returns 'YYYY-MM-DD'
+So if we wanted to query the date with the latter, we would use this syntax:
+SELECT date('2025-11-20')
+FROM table;
+We can effectively manage dates by using the correct method with the correct
+database format.
+PS: SQLite stores dates as TEXT, REAL, AND INTEGER. But, as we said before,
+it's recommended TEXT using the ISO format.
+"""
