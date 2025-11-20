@@ -117,3 +117,16 @@ def in_operator(table, column, value):
 # need so send a new cursor, by establishing a new connection
 # with the database and, then, sending the cursor as an object to the function.
 # By doing this, we are able to deal with this unfortunate problem.
+
+
+# We've done almost the same operation when we created a table.
+# However, this time, we are creating a view, by selecting columns
+# from the table that we've created. We could create a *column argument,
+# to receive a tuple of columns, but one column, for this example,
+# is enough.
+def create_view(table, view_name, column, condition):
+    view = "CREATE VIEW {} AS " \
+           "SELECT {} " \
+           "FROM {} " \
+           "WHERE {};".format(view_name, column, table, condition)
+    return view

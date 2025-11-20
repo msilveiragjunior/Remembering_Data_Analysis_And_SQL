@@ -446,3 +446,43 @@ database format.
 PS: SQLite stores dates as TEXT, REAL, AND INTEGER. But, as we said before,
 it's recommended TEXT using the ISO format.
 """
+# --- VIEW --- #
+"""
+A view act as a virtual table, based on the select query of a given SQL table.
+It gives a representation of the information inside a table.
+To give a parallel to explain a virtual table: it's like a SELECT statement
+that always give an updated version of the table.
+The syntax is as follows:
+CREATE VIEW view AS
+SELECT column
+FROM table
+WHERE condition;
+So if we were applying to a real case, it would look like this:
+CREATE VIEW [STATIONS CITIES AND ADDRESSES] AS
+SELECT municipality, address
+FROM stations
+WHERE lat > 42.35;
+To return the view, the syntax is as follows:
+SELECT * FROM [STATIONS CITIES AND ADDRESSES];
+This will return all municipalities and addresses that have,
+in the stations table, a latitude greater than 42.35.
+To update a view, we have to follow this syntax:
+CREATE OR REPLACE view AS
+SELECT column
+FROM table
+WHERE condition; <---- This will not work with SQLite
+To make this work with SQLite, we need to apply a workaround:
+1 - DROP VIEW IF EXISTS view;
+2 - CREATE VIEW new_view AS...; with the new definition.
+The IF EXISTS clause ensures that the view exists and prevents
+the database to throw an error.
+And, lastly, to delete a view, we need to follow this syntax:
+DROP VIEW view;
+When we apply it to a real case, it will look something like this:
+DROP VIEW IF EXISTS [STATIONS CITIES AND ADDRESSES]; <---- Works with SQLite
+With SQLite, we can follow the workaround clause IF EXISTS,
+to ensure integrity within our code.
+PS: With SQLite, we won't use the brackets when creating or selecting
+a view.
+Let's apply it to python on the users.py and table_01_sql.py file.
+"""

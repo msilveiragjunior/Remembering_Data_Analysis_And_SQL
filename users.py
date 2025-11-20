@@ -230,7 +230,38 @@ def alter_table():
         print("The table does not exist.\n")
 
 
-alter_table()
+# Here we're getting the information necessary to create our view.
+# But also let's create a SELECT * to view the rows inside our view.
+def create_view():
+    key = input("Enter the name of the table from which you want the"
+                " information: \n")
+    key_name = input("Enter the name for the view: \n")
+    column_01 = input("Enter the column name: \n")
+    condition = input("Enter the condition: \n")
+    # We could parameterize the string with this representation:
+    # view = f'CREATE VIEW "{key_name}" AS \
+    #         SELECT "{column_01}"\
+    #         FROM "{key}"\
+    #         WHERE {condition}'
+    # print(view)
+    # This would mitigate SQL Injection attempts
+    # But for the sake of clarity, we'll send it to another function to
+    # the job of creating the concatenating the statement
+    view = table_01_sql.create_view(key, key_name, column_01, condition)
+    print(view + "\n")
+    cursor.execute(view)
+
+    # Here we'll create the SELECT statement with a parameterized version
+    # of the string
+    query = f'SELECT * FROM "{key_name}";'
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    for i in rows:
+        print(*i, "\n")
+
+
+create_view()
+# alter_table()
 # into_clause()
 # in_operator()
 # like_operator()
