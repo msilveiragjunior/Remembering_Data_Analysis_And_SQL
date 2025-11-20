@@ -357,3 +357,36 @@ PS: Remember the workaround to modify constraints in SQLite.
 PS²: All syntax shown here is for SQL Server. If it doesn't work in SQLite,
 I already described workarounds in previous examples.
 """
+# --- INDEX CONSTRAINT --- #
+"""
+Before diving into this concept, we have to clarify some things:
+an INDEX is not just a constraint, it's also a data structure that
+is used to speed up queries. So It's an enforcer and a data structure.
+It's purpose is to make data retrieval and sorting operations go faster
+than it would go without it.
+Remember to use indexes for columns that you query often, this will avoid
+indexing columns that change frequently and will also avoid the downside
+of indexes.
+The syntax is as follows:
+CREATE INDEX index
+ON table (column);
+In a real case, with SQLite, it would look like this:
+CREATE INDEX idx
+ON stations (municipality)
+In this case, an index will be created with the idx name
+for municipality in the stations table.
+Think of an index like a pointer in C:
+it tells the database where data is stored so searches don't scan every row.
+It points to where the data is stored within a database,
+so when querying, the database won't have to go through every
+row until it finds a value.
+We can also drop an index from a database:
+DROP INDEX index; <---- This works with SQLite
+In a real case it would look like this:
+DROP INDEX [IF_EXISTS] idx; <---- This works with SQLite
+PS: An UNIQUE INDEX would be a case where an INDEX act like a constraint.
+PS²: INDEXES speed up the reading of a row, with the trade-off of slow
+writes.
+PS³: Because indexes are not inherently a constraint, you can manipulate them
+with SQLite.
+"""
