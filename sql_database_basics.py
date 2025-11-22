@@ -531,4 +531,44 @@ This ensure that is parameterized and all inputs will be treated literally.
 """
 # --- Hosting a Database --- #
 """
+When hosting a SQL database, we need to review key aspects of SQL hosting:
+1 - Hosting Environments: If the host is shared, it can be risky, but
+it will be cost-effective. If it's hosted in a virtual private server (VPS),
+then the hosting will be virtualized. This will offer control and more
+performance than when hosted in a shared environment.
+To have the maximum security possible, we need a dedicated server hosting.
+In this model, you get exclusive access to a physical
+server, maximizing performance, security and customization. However, it's
+not cost-effective. So for bigger projects, this route would be the recommended
+one.
+For even bigger projects, we can also go through the route of cloud-hosting.
+However, it can be as secure as a dedicated server with capable personnel
+to monitor 24/7 the server, but the responsibility is shared with the provider
+of the hosting.
+Two main concepts should be remembered:
+Self-managed (DIY): You install MySQL/Postgres/SQL Server yourself on a
+VPS/dedicated machine.
+Managed: RDS (AWS), Azure SQL, GCP Cloud SQL handle backups, failover,
+patching, scaling.
+When we talk about scaling, we have to mention, also, two types of scaling:
+vertical scaling would be increasing of hardware capability. Horizontal
+scaling increases read performance and availability, and also
+improves write throughput over very large datasets.
+2 - Purpose:
+We need to take into account what information or what type of information will
+be stored. If it's passwords, names, user information. Everything that is
+confidential, then we need to maximize security, have full control over
+the environment and enough storage size to do regular backups.
+We'll need to have firewalls, security measures, monitoring tools, and
+integration with development tools to do it remotely, in a secure way.
+To summarize: to host a database remotely, we have to take into account
+a myriad of possibilities and take into account our current state of
+development.
+PS: Never expose a db to the public, because it allows attackers to run
+direct queries or bypass your application layer.
+PS²: Use subnets/VPC. The VPC is an acronym for virtual private cloud.
+You can use them to make the environment inside a cloud server more secure.
+Secure TLS connections and restrict IP allowlists and security groups.
+PS³: Always use hashed passwords, with salt, even. Encrypt the drives and
+the transit connections.
 """
