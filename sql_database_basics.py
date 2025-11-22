@@ -572,3 +572,64 @@ Secure TLS connections and restrict IP allowlists and security groups.
 PS³: Always use hashed passwords, with salt, even. Encrypt the drives and
 the transit connections.
 """
+# ---  DATA Types --- #
+"""
+This is the finishing touch for our 'SQL remembering' part of the repo.
+Whenever we do a CREATE TABLE or CREATE VIEW, we can define de datatype of
+a column. As an SQL Developer, we must decide of type of data will be defined
+to be stored inside these columns. We need to be precise and be able to
+understand why we are choosing specific datatypes.
+Here I'll try to synthesize the name of datatypes by categories.
+We'll begin with string datatypes, here I'll give MySQL examples:
+CHAR(n) - This datatype stores fixed-length of non-Unicode character strings.
+The 'n' specifies the number of characters in a char. If a shorter string,
+less than n characters, is inserted, the string will be padded with spaces
+before reaching the specified length. CHAR(n) is extremely effective when the
+string length is uniform.
+VARCHAR(n) - Stores a string with variable length of non-Unicode characters.
+Only characters entered are stored. Compared to CHAR, it'll save storage space.
+NCHAR(n) - Similar to CHAR, but stores Unicode characters.
+NVARCHAR(n) - Similar to VARCHAR(n), but it stores Unicode character strings.
+TEXT - We'll use TEXT to store very large variable-length strings.
+NTEXT - Similar to TEXT, but for Unicode characters.
+BINARY(n) - Stores binary data with fixed length.
+VARBINARY(n) - Stores binary data with variable-length.
+BLOB - Binary Large Objects. There are used to store very large binary data.
+CLOB - Character Large Objects. Used to store very large character data.
+--------- Numeric DATATYPES ---------
+BIT(n) - This stores a number of bits per specified - n - in size.
+It can handles values from 1 to 64.
+TINYINT(n) - The range for this goes from -128 to 127. The n
+specifies the maximum. If nothing is defined, the unsigned range will go
+from 0 to 255. So the maximum amount of digits shown is 255.
+BOOl - 0 equals to FALSE and non-zero values equals to TRUE.
+SMALLINT(n) - The range goes from -32768 to 32767. The unsigned range
+goes from 0 to 65535 - everyone from the area remember this number.
+INT(n) - The range goes from -2147483648 to 2147483647. The unsigned
+range goes from 0 to 4294967295.
+BIGINT(n) - The range goes from -9223372036854775808 to 9223372036854775807.
+The unsigned range goes from 0 to 18446744073709551615.
+FLOAT(n) - A Floating point number are used to represent real numbers
+with a decimal point. The 'n' represents if it will be a single precision
+number or a double precision number.
+A single precision number stores 32 bits, approximately 7 decimal digits.
+It's used when extreme precision is not necessary.
+A double precision number stores 64 bits, approximately 15-17 decimal digits.
+It's used when extreme precision is necessary, such as in scientific
+simulations, data analysis, scientific analysis and so on.
+DECIMAL(n, d) - An decimal number defined by its total number of digits (n),
+and the number of digits after the decimal point (d). The maximum number
+of digits after the decimal point is 30.
+--------- Date DATATYPES ---------
+DATE - YYYY-MMM--DD
+DATETIME - YYYY-MM-DD HH:MI:SS[.nnn]
+SMALLDATETIME - YYYY-MM-DD HH:MI:SS
+DATETIME2 - YYYY-MM-DD HH:MI:SS[.nnnnnnn]
+TIMESTAMP - YYYY-MM-DD HH:MM:SS, but offers automatic updating or timezone
+information.
+TIME - hh:mm:ss
+DATATIMEOFFSET - Stores date and time with timezone information.
+TEXT - Only for SQLite, the format is YYYY-MM-DD HH:MM:SS.SSS,
+using the ISO8601.
+This finishes our synthesis of the SQL database basics. :D
+"""
