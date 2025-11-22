@@ -486,3 +486,49 @@ PS: With SQLite, we won't use the brackets when creating or selecting
 a view.
 Let's apply it to python on the users.py and table_01_sql.py file.
 """
+# --- SQL Injection --- #
+"""
+The placement of malicious code in SQL statements is called SQL Injection.
+It's mainly a technique to gather data from inputs that are not cleaned in
+a way to evade this type of insertion.
+For example - credit due to w3schools for this example:
+userid = input("Insert user ID: \n")
+txtSQL = "SELECT * FROM Users WHERE UserID = '{}'".format(userid)
+If there's no delimitations of characters that can be used in the input,
+the malicious user can place 105 OR (an operator) 1=1; 1=1 always is TRUE.
+This will return all rows inside Users table. If the Users row contains names,
+and passwords, then the database will be compromised.
+SQL Injection can also be based on ''='', since it will always be true.
+For example:
+user = input("username: \n")
+passwd = input("password: \n")
+query = "SELECT * FROM Users WHERE name = '{}' AND pass = '{}'"
+        .format(user, passwd)
+Here the malicious person can insert ' OR ''='' for the name and ' OR ''='''
+for the password.
+The string will turn into
+(SELECT * FROM Users WHERE name = '{}' AND pass = '{}').format(user, passwd)
+The SQL statement above will return all rows from Users, since "=" is
+always True.
+Databases mostly support batched SQL statements. Using the example from before,
+we can show how a malicious person can use a batched statement to alter a
+table:
+userid = input("Insert user ID: \n")
+txtSQL = "SELECT * FROM Users WHERE UserID = '{}'".format(userid)
+If the person were to input '105; DROP TABLE stations', the statement would
+look like this: SELECT * FROM Users WHERE UserID = 105; DROP TABLE stations.
+This would delete the stations table.
+To make sure a statement is protected from SQL Injection, we can use SQL
+parameters. Parameters are represented by a ? (interrogation) symbol, in
+SQLite. The SQL database will check if the parameter is correct and will
+be treated literally, and not a part of a SQL statement.
+The syntax would be as follows:
+name = input("Name: \n")
+address = input("Address: \n")
+string = "INSERT INTO stations (Name, Address) Values (?, ?)"
+cursor.execute(string, (name, address))
+This ensure that is parameterized and all inputs will be treated literally.
+"""
+# --- Hosting a Database --- #
+"""
+"""
