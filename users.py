@@ -245,7 +245,7 @@ def create_view():
     #         WHERE {condition}'
     # print(view)
     # This would mitigate SQL Injection attempts
-    # But for the sake of clarity, we'll send it to another function to
+    # But for the sake of clarity, we'll send it to another function for
     # the job of creating the concatenating the statement
     view = table_01_sql.create_view(key, key_name, column_01, condition)
     print(view + "\n")
