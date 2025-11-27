@@ -1133,3 +1133,21 @@ Comparison:
 To finish this part of the repo:
 We've managed to remember the basics of SQL. :D
 """
+# --- Addendum ACID Transaction --- #
+"""
+This is a necessary addendum. We need to show how
+to maintain ATOMICITY, CONSISTENCY, ISOLATION, and DURABILITY.
+These are the main components of an ACID Transaction.
+Let's begin creating a new file, called acid_transaction.py
+just to show how it would be done.
+We'll use the acid_demo.db as a database.
+We are going to use:
+BEGIN TRANSACTION
+SELECT
+TRY-EXCEPT blocks
+UPDATE
+COMMIT
+and ROLLBACK
+Everything to ensure the consistencies of ACID + TRANSACTIONS
+as an example in code. Even when using SQLite.
+"""
